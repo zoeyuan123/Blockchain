@@ -1,0 +1,50 @@
+<style>
+    .this_content{box-sizing: border-box;overflow: hidden;width: 100%;padding-left: 200px;}
+</style>
+<div class="this_content">
+    <div class="layui-tab" lay-filter="content" lay-allowclose="true">
+        <ul class="layui-tab-title">
+
+        </ul>
+        <div class="layui-tab-content">
+
+        </div>
+    </div>
+</div>
+<script>
+    let tab_list = [];
+    layui.use('element', function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+        //触发事件
+        var active = {
+            tabAdd: function(id){
+                console.log(id)
+                //新增一个Tab项
+
+            }
+        };
+
+        //监听导航点击
+        element.on('nav(this_nav)', function(elem){
+            console.log(elem.attr('lay-id'))
+            let this_id = elem.attr('lay-id');
+
+            for(let i in tab_list) {
+                console.log(i)
+                if(this_id == i) {
+                    return;
+                }
+            }
+            element.tabAdd('content', {
+                title: '新选项'+ (Math.random()*1000|0) //用于演示
+                ,content: '内容'+ (Math.random()*1000|0)
+                ,id: this_id //实际使用一般是规定好的id，这里以时间戳模拟下
+            })
+
+
+//
+//            var othis = $(this), type = othis.data('type');
+//            active[type] ? active[type].call(this, othis) : '';
+        });
+    });
+</script>
