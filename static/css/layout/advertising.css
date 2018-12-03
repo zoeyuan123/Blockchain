@@ -1,0 +1,6 @@
+.advertising{position: relative;}
+.advertImg{width: 100%;float:left;}
+.advCenter{width: 2.734rem;height: 3.1rem;position: absolute;right: 0;top: 0;bottom: 0;left: 0;margin: auto;}
+.advtxt{float: left;width: 100%;}
+.startSignBtn{float: left;cursor: pointer;background: #48D4D6; margin-left: 0.1rem;margin-top: 0.390625rem; width: 2.5417rem;height: 0.365rem;text-align: center;line-height: 0.365rem;color: white;font-size: 0.1875rem;border-radius: 0.1825rem;}
+.startSignBtn:hover {background: #3BACAD;}

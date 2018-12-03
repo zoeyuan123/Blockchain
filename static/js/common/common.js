@@ -38,7 +38,7 @@ echo.client = echo.client || {};
                         err&&err(errResult);
                         //无效的上下文，跳转到默认
                         if(errResult.status==-4){
-                            location.href='/index';
+                            location.href='/layout';
                         }
                         return;
                     }catch(e){

@@ -4,9 +4,9 @@
         var tid;
         function refreshRem() {
                 var width = docEl.getBoundingClientRect().width;
-                if (width > 800) { // 最大宽度
-                        width =800;
-                }
+                // if (width > 800) { // 最大宽度
+                //         width =800;
+                // }
                 var rem = width / 10; // 将屏幕宽度分成10份， 1份为1rem
                 docEl.style.fontSize = rem + 'px';
                 ///rem用font-size:75px来进行换算
