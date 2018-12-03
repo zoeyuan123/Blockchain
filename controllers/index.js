@@ -6,7 +6,7 @@ const common = require("./common");
 
 //默认页面
 exports.index = function (req, res) {
-    return res.render('void');
+    return res.render('index');
 };
 //404
 exports.i404 = function (req, res) {
