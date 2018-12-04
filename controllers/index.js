@@ -8,6 +8,18 @@ const common = require("./common");
 exports.index = function (req, res) {
     return res.render('index');
 };
+//用户中心
+exports.usercer = function (req, res) {
+    return res.render('user/usercer');
+};
+//用户中心
+exports.user = function (req, res) {
+    return res.render('user/user');
+};
+//wasm
+exports.wasm = function (req, res) {
+    return res.render('wasm/wasm');
+};
 //404
 exports.i404 = function (req, res) {
     return res.render('error/404');

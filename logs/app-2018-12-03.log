@@ -37,3 +37,6 @@
 [2018-12-03 18:49:13.342] [INFO] app - ::ffff:127.0.0.1 - - "GET / HTTP/1.1" 200 - "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36"
 [2018-12-03 18:49:16.181] [INFO] app - ::ffff:127.0.0.1 - - "GET / HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36"
 [2018-12-03 19:06:51.711] [INFO] app - ::ffff:127.0.0.1 - - "GET /static/plugin/swiper/swiper.min.js.map HTTP/1.1" 404 430 "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36"
+[2018-12-03 19:07:38.135] [INFO] app - ::ffff:127.0.0.1 - - "GET / HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36"
+[2018-12-03 19:07:38.374] [INFO] app - ::ffff:127.0.0.1 - - "GET /static/plugin/swiper/swiper.min.js.map HTTP/1.1" 404 430 "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36"
+[2018-12-03 19:07:40.626] [INFO] app - ::ffff:127.0.0.1 - - "GET / HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36"

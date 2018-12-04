@@ -1,4 +1,5 @@
-.header{height: 0.8125rem;background: #2F53B1;box-shadow:  0 5px 5px #000;}
+.header{height: 0.8125rem;background: #2F53B1;box-shadow:  0 2px 13px #444;position: fixed;top: 0;left: 0; }
+/*background: #2F53B1*/
 .logo{float: left;height: 0.78125rem;}
 .menu{float: right;box-sizing: border-box;padding-right: 0.208rem;}
 .menu li{position: relative; float: left;height: 0.6042rem;width: 0.667rem; box-sizing: border-box;margin-right: 0.8073rem;font-family: '微软雅黑';font-size: 0.1667rem;color: white;border-bottom: 0.0365rem solid #2F53B1; }
