@@ -35,11 +35,14 @@
 .account_List li>p,.account_List li>div{float: left;line-height:0.364rem;height: 0.364rem;font-size:0.182rem;color: #000;}
 .account_List li>p{width: 1.61rem;text-align: right;}
 .account_List li input{float: left;width: 1.67rem;margin-right:0.1rem;border: 0;outline: none;background:#E6E6E6;color: #333;box-sizing: border-box;padding-left: 15px; }
-.acc_Btn{font-size: 0.1562rem;color: white;float: left;cursor: pointer; background: #768ECC;width: 1.09rem;text-align: center;line-height:0.364rem;height: 0.364rem;border-radius: 5px;}
-.acc_Btn:hover{background: #6279B6;}
-.acc_Ok{font-size: 0.1562rem;margin-top:0.677rem;margin-left: 1.5625rem;  color: white;float: left;cursor: pointer; background: #768ECC;width: 1.22rem;text-align: center;line-height:0.364rem;height: 0.364rem;border-radius: 5px;}
-.acc_Ok:hover{background: #6279B6;}
+.acc_Btn{font-size: 0.1562rem;color: white;float: left;cursor: pointer; background: #2F53B1;width: 1.09rem;text-align: center;line-height:0.364rem;height: 0.364rem;border-radius: 5px;}
+.acc_Btn:hover {background:#768ECC ;}
+.acc_Ok{font-size: 0.1562rem;margin-top:0.677rem;margin-left: 1.5625rem;  color: white;float: left;cursor: pointer; background:  #2F53B1;width: 1.22rem;text-align: center;line-height:0.364rem;height: 0.364rem;border-radius: 5px;}
+.acc_Ok:hover{background: #768ECC;}
 
+.layui-layer-content{line-height: 103px;font-size: 20px;color: #333;}
+.layui-layer-title{background:#2F53B1;color: white;font-size: 18px;}
+.layui-layer-hui{background: white;box-shadow: 0 0 15px #666;}
 
 
 /*签章管理*/
@@ -51,7 +54,7 @@
 .sign_file{float: left;cursor: pointer; margin-left:0.3125rem;width: 1.4rem;height: 0.9rem;border: 1px dotted #BBBBBB;border-radius: 10px; }
 .sign_file img { color: #BBBBBB;font-size: 40px;display: block;width: 0.41rem; margin: 0.1rem auto;text-align: center;}
 .sign_file span{font-size: 0.167rem;color: #8D8D8D;text-align: center;display: block;width: 100%;}
-.sign_Fade,.link_Fade{position: fixed;width: 100%;height: 100%;background: rgba(0,0,0,0.5);top: 0;left: 0;}
+.sign_Fade,.link_Fade{position: fixed;display: none; width: 100%;height: 100%;background: rgba(0,0,0,0.5);top: 0;left: 0;z-index: 99999;}
 .sign_Get{width: 3.2rem;padding:0.156rem; height:4.3rem;box-sizing: border-box;border-radius: 10px;box-shadow: 0 0 20px #333; position: absolute;top: 0;right: 0;left: 0;bottom: 0;margin: auto;background: white;}
 .file_Btn{float: left;width:1.3rem;height: 0.33rem;cursor: pointer; line-height: 0.33rem; border-radius: 5px;background: #2F53B1;color: white;text-align: center;font-size: 0.15rem;}
 .file_Btn:hover{background:#253F85; }
@@ -72,7 +75,7 @@
 .serch_Box input{height: 0.3125rem;line-height: 0.3125rem;width: 1.5rem;font-size: 0.1562rem; float: left;padding-left: 15px;box-sizing: border-box;border: 0;outline: none;background: none;}
 .serch_Btn{float: left; width:1.2rem;height: 0.33rem;display: inline; cursor: pointer; line-height: 0.33rem; border-radius: 5px;background: #2F53B1;color: white;text-align: center;font-size: 0.15rem;}
 .serch_Btn:hover{background: #6279B6;}
-.serch_List{margin-top: 0.3rem;}
+.serch_List{margin-top: 0.3rem;padding-bottom: 1rem;}
 .serch_List li{float: left;width: 100%;height: 0.52rem;line-height: 0.52rem;}
 .serch_List .serch_top{background:#2F53B1!important;border: 0; }
 .serch_List .serch_top span{color: white;font-size:0.15625rem;}
@@ -91,5 +94,6 @@
 .link_Add_Box input{height: 0.3125rem;line-height: 0.3125rem;width: 2rem;font-size: 0.1562rem; float: left;padding-left: 15px;box-sizing: border-box;border: 0;outline: none;background: none;}
 .link_Add_Btn{float: left; width:100%;margin-top: 0.2rem; height:  0.3125rem;display: inline; cursor: pointer; line-height:  0.3125rem; border-radius: 5px;background: #2F53B1;color: white;text-align: center;font-size: 0.15rem;}
 .link_Add_Btn:hover{background:#253F85; }
+.link_Close{width: 40px;position: absolute;right: 20px;top: 20px;cursor: pointer;}
 
 

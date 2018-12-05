@@ -4,9 +4,17 @@
     <%include layout/header.ejs%>
     <%include layout/adver.ejs%>
     <%include layout/databox.ejs%>
-    <div class="dino">
-        <%include model/login.ejs%>
-    </div>
+    <%include model/login.ejs%>
 </div>
-
+<script>
+    fadeLogIn()
+    function fadeLogIn() {
+        $("#startSignBtn").on('click',function () {
+            $('#loginMain').stop(true).fadeIn(150);
+        })
+        $("#login_Close").on('click',function () {
+            $('#loginMain').stop(true).fadeOut(150);
+        })
+    }
+</script>
 <%include layout/nullfooter.ejs%>

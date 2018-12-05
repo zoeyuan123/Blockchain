@@ -22,16 +22,33 @@
       <p>工作单位：</p>
       <div>
         <input type="text">
-        <span class="acc_Btn">企&nbsp;业&nbsp;认&nbsp;证</span>
+        <span class="acc_Btn" id="enterprise" data-method="offset" data-type="t">企&nbsp;业&nbsp;认&nbsp;证</span>
       </div>
     </li>
     <li>
       <p>职位：</p>
       <div>
         <input type="text">
-        <span class="acc_Btn">确&nbsp;&nbsp;定</span>
+        <!--<span class="acc_Btn">确&nbsp;&nbsp;定</span>-->
       </div>
     </li>
   </ul>
   <p class="acc_Ok">确&nbsp;&nbsp;定</p>
 </div>
+
+<script>
+  accountEvt();
+  function accountEvt() {
+      $('#enterprise').on('click',function () {
+          layer.msg('暂未开放', {
+              type:"2",
+              title:"信息",
+              id:"0",
+//              offset:'b',
+              area: ['400px', '200px'],
+              time: 500000, //20s后自动关闭
+              btn: ['明白了']
+          });
+      })
+  }
+</script>

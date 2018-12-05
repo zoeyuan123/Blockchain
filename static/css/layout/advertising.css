@@ -1,4 +1,4 @@
-.advertising{position: relative;padding-top: 0.8125rem;}
+.advertising{position: relative;margin-top: 0.8125rem;}
 .advertImg{width: 100%;float:left;}
 .advCenter{width: 2.734rem;height: 3.1rem;position: absolute;right: 0;top: 0;bottom: 0;left: 0;margin: auto;}
 .advtxt{float: left;width: 100%;}

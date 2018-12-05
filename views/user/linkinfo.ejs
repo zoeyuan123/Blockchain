@@ -5,7 +5,7 @@
             <img src="/static/img/model/serch.png" alt="">
             <input type="text">
         </div>
-        <p class="serch_Btn">添加联系人</p>
+        <p class="serch_Btn" id="serch_Btn">添加联系人</p>
     </div>
     <ul class="single serch_List">
         <li class="serch_top">
@@ -52,8 +52,9 @@
         </li>
     </ul>
 </div>
-<div class="link_Fade">
+<div id="link_Fade" class="link_Fade">
     <div class="link_Add">
+        <img src="/static/img/layout/close.png" id="link_Close" class="link_Close" alt="">
         <div class="single link_Add_Con">
             <p class="link_Add_Tit">通过手机号添加</p>
             <div class="link_Add_Box">
@@ -72,3 +73,18 @@
         </div>
     </div>
 </div>
+
+<script>
+    fadeClose();
+    function fadeClose() {
+        $('#serch_Btn').on('click',function () {
+            $('#link_Fade').stop(true).fadeIn(150);
+        })
+        $('#link_Close').on('click',function () {
+            $('#link_Fade').stop(true).fadeOut(150);
+        })
+    }
+
+
+
+</script>

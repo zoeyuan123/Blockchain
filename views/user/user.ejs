@@ -2,28 +2,40 @@
 <link rel="stylesheet" href="/static/css/model/user.css">
 <link rel="stylesheet" href="/static/css/layout/header.css">
 <div class="single  header">
-    <img src="/static/img/layout/logo.png" class="logo" alt="">
+    <a href="/"><img src="/static/img/layout/l0.png" class="logo" alt=""></a>
+    <img src="/static/img/layout/l1.png" class="logo" alt="">
     <ul class="menu">
-        <li class="this_menu"><span>用户中心</span></li>
-        <li><span>用户中心</span></li>
-        <li><span>用户中心</span></li>
+        <li class="this_menu"><a href="/user">用户中心</a></li>
+        <li><a href="/user">合同签署</a></li>
+        <li><a href="/user">合同管理</a></li>
     </ul>
 </div>
-<ul class=" userLeft">
+<ul class="userLeft" id="userLeft">
     <li class="this_UserMenu">账号信息</li>
     <li>签章管理</li>
     <li>联系人管理</li>
 </ul>
-<div class="user_Con">
-    <div class="user_Fun dino">
+<div class="user_Con" id="user_Con">
+    <div class="user_Fun ">
         <%include accinfo.ejs%>
     </div>
     <div class="user_Fun dino">
         <%include signinfo.ejs%>
     </div>
-    <div class="user_Fun ">
+    <div class="user_Fun dino">
         <%include linkinfo.ejs%>
     </div>
 </div>
-
+<script>
+    leftTab()
+    function leftTab() {
+        $('#userLeft li').on('click',function () {
+            var i = $(this).index();
+            $(".user_Fun").css('display','none');
+            $(this).siblings().removeClass();
+            $(this).removeClass().addClass('this_UserMenu');
+            $("#user_Con .user_Fun").eq(i).stop(true).fadeIn(150);
+        })
+    }
+</script>
 <%include ../layout/nullfooter.ejs%>
