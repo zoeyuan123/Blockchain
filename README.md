@@ -18,7 +18,13 @@ node server.js
 ```
 
 ## 部署
-部署可使用pm2 部署管理nodejs  具体API 可以参考 
+部署可使用pm2 部署管理nodejs  具体API 可以参考
+
+https://www.jianshu.com/p/709921e21336
+
+http://pm2.keymetrics.io/docs/usage/application-declaration/#advanced-features
+
+
 
 ## 链接
 
@@ -31,6 +37,3 @@ node server.js
 
 
 
-https://www.jianshu.com/p/709921e21336
-
-http://pm2.keymetrics.io/docs/usage/application-declaration/#advanced-features
