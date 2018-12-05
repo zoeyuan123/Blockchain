@@ -20,6 +20,16 @@ node server.js
 ## 部署
 部署可使用pm2 部署管理nodejs  具体API 可以参考 
 
+## 链接
+
+首页：http://127.0.0.1:7800/
+
+用户身份认证：http://127.0.0.1:7800/usercer
+
+用户中心： http://127.0.0.1:7800/user
+
+
+
 
 https://www.jianshu.com/p/709921e21336
 
