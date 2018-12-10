@@ -2,7 +2,7 @@
  * Created by Echonessy on 2018/10/19.
  */
 const common = require("./common");
-
+const crypto = require('crypto');
 
 //默认页面
 exports.index = function (req, res) {
@@ -18,7 +18,27 @@ exports.user = function (req, res) {
 };
 //wasm
 exports.wasm = function (req, res) {
-    return res.render('wasm/wasm');
+    return res.render('wasm/index');
+};
+//wasmKey
+exports.wasmKey = function (req, res) {
+    let reqData = req.body;
+    console.log(reqData);
+    // let cryptoData = reqData.crypto;
+    // let cipher = cryptoData.cipher;
+    // let ciphertext = cryptoData.ciphertext;
+    // let cipherparams = cryptoData.cipherparams;
+    // let iv = cipherparams.iv;
+    // let key = reqData.auth;
+    // console.log(cipher)
+    // console.log(key)
+    // console.log(iv)
+    // ciphertext = new Buffer(ciphertext, 'base64').toString('binary');
+    // let decipher = crypto.createDecipheriv(cipher, key, iv);
+    // let decoded = decipher.update(ciphertext, 'binary', 'utf8');
+    // decoded += decipher.final('utf8');
+    // console.log(decoded);
+   return res.json(reqData)
 };
 //404
 exports.i404 = function (req, res) {
@@ -44,3 +64,7 @@ exports.i503 = function (req, res) {
 exports.signDemo = function (req, res) {
     return res.render('demo/signDemo');
 };
+
+
+
+

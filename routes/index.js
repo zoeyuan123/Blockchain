@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const index = require('../controllers/index');
+const wasm = require('../controllers/wasm');
 router.get(/(^\/$)|^(\/index)/, index.index);
 
 //首页
@@ -9,6 +10,8 @@ router.get("/", index.index);//首页
 router.get("/usercer", index.usercer);//用户中心
 router.get("/user", index.user);//用户中心
 router.get("/wasm", index.wasm);//wasm
+//私钥解密
+router.post('/wasmKey',index.wasmKey);
 
 router.get("/404", index.i404);//404
 router.get("/403", index.i403);//403
