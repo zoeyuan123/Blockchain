@@ -1,4 +1,0 @@
-[2018-12-10 09:49:31.075] [INFO] app - ::ffff:127.0.0.1 - - "GET / HTTP/1.1" 200 - "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36"
-[2018-12-10 09:49:35.895] [INFO] app - ::ffff:127.0.0.1 - - "GET /wasm HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36"
-[2018-12-10 09:49:39.143] [INFO] app - ::ffff:127.0.0.1 - - "POST /wasmKey HTTP/1.1" 500 485 "http://127.0.0.1:7800/wasm" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36"
-[2018-12-10 09:49:41.781] [INFO] app - ::ffff:127.0.0.1 - - "GET /static/plugin/swiper/swiper.min.js.map HTTP/1.1" 404 430 "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36"
