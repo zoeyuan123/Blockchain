@@ -1,62 +1,67 @@
 <%include ../layout/webheader.ejs%>
 <link rel="stylesheet" href="/static/css/model/user.css">
 <link rel="stylesheet" href="/static/css/layout/header.css">
-<div class="single header">
-    <a href="/"><img src="/static/img/layout/l0.png" class="logo" alt=""></a>
-    <img src="/static/img/layout/l1.png" class="logo" alt="">
-    <ul class="menu">
-        <li class="this_menu"><a href="/user">用户中心</a></li>
-        <li><a href="/user">合同签署</a></li>
-        <li><a href="/user">合同管理</a></li>
-    </ul>
-</div>
-<div class="single userContent">
-    <div class="single userBox">
-        <div class="single userTitle">身份认证</div>
-        <ul class="single userList">
-            <li class="single">
-                <p>姓名：</p>
-                <div><input type="text"></div>
-            </li>
-            <li class="single">
-                <p>身份证号：</p>
-                <div><input type="text"></div>
-            </li>
-            <li class="single">
-                <p>手机号：</p>
-                <div><input type="text" class="in1"></div>
-            </li>
-            <li class="single">
-                <p>验证码：</p>
-                <div>
-                    <input type="text" class="in1">
-                    <span class=" userSendBtn">发送验证码</span>
-                </div>
-            </li>
-            <li class="single">
-                <p>上传本人照片：</p>
-                <div><img src="/static/img/model/upload.png" alt=""></div>
-            </li>
-            <li class="single">
-                <p>上传身份证正面：</p>
-                <div><img src="/static/img/model/upload.png" alt=""></div>
-            </li>
-            <li class="single">
-                <p>上传身份证反面：</p>
-                <div><img src="/static/img/model/upload.png" alt=""></div>
-            </li>
+<div class="header_Fix">
+    <div class="header">
+        <a href="/"><img src="/static/img/layout/l0.png" class="logo" alt=""></a>
+        <img src="/static/img/layout/l1.png" class="logo" alt="">
+        <ul class="menu">
+            <li class="this_menu"><a href="/user">用户中心</a></li>
+            <li><a href="/sign">合同签署</a></li>
+            <li><a href="/manage">合同管理</a></li>
         </ul>
     </div>
-    <div class="single userBox">
-        <div class="single userTitle">公私钥生成</div>
-        <div class="single keyBox">
-            <span class="single keyTxt">您的公钥：j28hq83h4foq8h</span>
-            <div class="single"><p class="keyBtn kb1">私钥文件下载</p></div>
-            <div class="single"><p class="keyBtn kb2">确定</p></div>
+</div>
+<div class="new_Content">
+    <div class="single userContent">
+        <div class="single userBox">
+            <div class="single userTitle">身份认证</div>
+            <ul class="single userList">
+                <li class="single">
+                    <p>姓名：</p>
+                    <div><input type="text"></div>
+                </li>
+                <li class="single">
+                    <p>身份证号：</p>
+                    <div><input type="text"></div>
+                </li>
+                <li class="single">
+                    <p>手机号：</p>
+                    <div><input type="text" class="in1"></div>
+                </li>
+                <li class="single">
+                    <p>验证码：</p>
+                    <div>
+                        <input type="text" class="in1">
+                        <span class=" userSendBtn">发送验证码</span>
+                    </div>
+                </li>
+                <li class="single">
+                    <p>上传本人照片：</p>
+                    <div><img src="/static/img/model/upload.png" alt=""></div>
+                </li>
+                <li class="single">
+                    <p>上传身份证正面：</p>
+                    <div><img src="/static/img/model/upload.png" alt=""></div>
+                </li>
+                <li class="single">
+                    <p>上传身份证反面：</p>
+                    <div><img src="/static/img/model/upload.png" alt=""></div>
+                </li>
+            </ul>
         </div>
+        <div class="single userBox">
+            <div class="single userTitle">公私钥生成</div>
+            <div class="single keyBox">
+                <span class="single keyTxt">您的公钥：j28hq83h4foq8h</span>
+                <div class="single"><p class="keyBtn kb1">私钥文件下载</p></div>
+                <div class="single"><p class="keyBtn kb2">确定</p></div>
+            </div>
 
+        </div>
     </div>
 </div>
+
 
 
 <%include ../layout/nullfooter.ejs%>

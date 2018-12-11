@@ -20,6 +20,49 @@ exports.user = function (req, res) {
 exports.wasm = function (req, res) {
     return res.render('wasm/index');
 };
+
+//合同签署
+exports.sign = function (req, res) {
+    return res.render('sign/index');
+};
+//同意签署结果
+exports.agreesign = function (req, res) {
+    return res.render('sign/agreesign');
+};
+//同意签署合同详情
+exports.agreeinfo = function (req, res) {
+    return res.render('sign/agreeinfo');
+};
+
+
+//拒绝签署结果
+exports.refusesign = function (req, res) {
+    return res.render('sign/refusesign');
+};
+//拒绝签署合同详情
+exports.refuseinfo = function (req, res) {
+    return res.render('sign/refuseinfo');
+};
+//保存草稿
+exports.draftsign = function (req, res) {
+    return res.render('sign/draftsign');
+};
+
+
+//合同签约步骤1
+exports.signstep = function (req, res) {
+    return res.render('sign/signstep');
+};
+//合同签约步骤2
+exports.signnext = function (req, res) {
+    return res.render('sign/signnext');
+};
+
+
+//合同管理
+exports.manage = function (req, res) {
+    return res.render('manage/index');
+};
 //wasmKey
 exports.wasmKey = function (req, res) {
     let reqData = req.body;

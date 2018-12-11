@@ -1,99 +1,109 @@
-.userContent{float: left;width: 100%;box-sizing: border-box;overflow: hidden;padding: 0 0.9896rem;padding-top: 0.8125rem;}
-.userBox{margin-top: 0.4167rem;}
-.userTitle{height:0.5729rem;line-height: 0.5729rem;color: #2F53B1;border-bottom: 2px solid #2F53B1;text-align: left;font-size:0.21875rem; }
-.userList {margin-top: 0.15625rem;padding-bottom: 0.599rem;}
-.userList li{margin-top: 0.208rem; }
-.userList li>p{width:2.73rem;float: left;font-size: 0.21875rem;text-align: right;height: 0.4167rem;line-height: 0.4167rem; }
-.userList li>div{width:2.99rem; float: left;font-size: 0.21875rem;text-align: left; }
-.userList li input{height: 0.4167rem;;width:2.99rem;float: left;border: 0;outline: none;background:#E6E6E6;color: #333;box-sizing: border-box;padding-left: 15px; }
-.userList li .in1,.userList li img{width:1.8rem;}
-.userSendBtn{float: right;width: .91rem;cursor: pointer; box-sizing: border-box; height: 0.4167rem;text-align: center;line-height:0.4167rem;font-size: 0.15625rem;color: white;background: #768ECC;border-radius: 5px; }
-.keyBox{padding-top:0.15625rem; }
-.keyTxt{height:0.83rem;line-height: 0.83rem;text-align: center;font-size:0.21875rem;color: #8D8D8D;  }
-.keyBtn{width: 2.54167rem;margin: 0  auto; ;cursor: pointer; background: #768ECC; height:0.365rem;line-height: 0.365rem;text-align: center;color: white;font-size:0.1875rem;border-radius: 5px;  }
-.kb1{margin-bottom:  1.328rem}
-.kb2{margin-bottom:1.109rem; }
+.userContent{float: left;width: 100%;box-sizing: border-box;overflow: hidden;padding: 0 95px;;margin-top: 80px; }
+.userBox{margin-top: 40px;}
+.userTitle{height:55px;line-height: 55px;color: #2F53B1;font-weight: bold; border-bottom: 1px solid #01237C;text-align: left;font-size:21px; }
+
+
+
+/*未认证*/
+.userList {margin-top: 32px;padding-bottom: 55px;}
+.userList li{margin-top: 20px; }
+.userList li>p{width:270px;float: left;font-size:20px;text-align: right;height: 40px;line-height: 40px;; }
+.userList li>div{width:300px; float: left;font-size: 20px; text-align: left; }
+.userList li input{height: 40px;;width:300px;float: left;border: 0;outline: none;background:#E6E6E6;color: #333;box-sizing: border-box;padding-left: 15px; }
+.userList li .in1,.userList li img{width:180px;}
+.userSendBtn{float: right;width: 100px;cursor: pointer; box-sizing: border-box; height: 40px;text-align: center;line-height:40px;font-size: 16px;color: white;background: #768ECC;border-radius: 5px; }
+.keyBox{padding-top:35px; }
+.keyTxt{height:45px;line-height: 45px;text-align: center;font-size:21px;color: #8D8D8D;  }
+.keyBtn{width: 250px;margin: 0  auto; ;cursor: pointer; background: #768ECC; height:35px;line-height: 35px;text-align: center;color: white;font-size:16px;border-radius: 5px;  }
+.kb1{margin-bottom:  130px}
+.kb2{margin-bottom:68px; }
 .keyBtn:hover{background: #6279B6;}
 .userSendBtn:hover{background: #6279B6;}
 
-
+.fixed_Center{position: fixed;z-index: 1;width: 900px;height: 100%;padding-bottom: 80px;top: 80px;left: 0;right: 0;margin: auto}
+.h100{height: 100%;}
 
 /*用户layout*/
-.userLeft{position: fixed;left: 0;width: 1.614rem; height: 100%;box-sizing: border-box;padding-bottom: 0.8125rem;left: 0;top: 0.8125rem;background: #E6E6E6;border-right: 5px solid #C4C4C4;}
-.userLeft li{float: left;cursor: pointer; width: 100%;color: #9A9A9A; height: 0.7rem;font-size: 0.15625rem; border-bottom: 1px solid #B8B8B8;line-height: 0.7rem;text-align: center;}
+.userLeft{position: absolute;left: 0;width: 160px; height: 100%;box-sizing: border-box;padding-bottom:80px;left: 0;top:0;background: #E6E6E6;border-right: 5px solid #C4C4C4;}
+.userLeft li{float: left;cursor: pointer; width: 100%;color: #9A9A9A; height: 55px;font-size: 15px; border-bottom: 1px solid #B8B8B8;line-height:55px;text-align: center;}
 .userLeft .this_UserMenu {color: #2F53B1;}
-
-.user_Con{float: left;width: 100%;box-sizing: border-box;padding-left: 1.614rem;padding-top: 0.8125rem;}
+.user_Con{float: left;width: 100%;box-sizing: border-box;padding-left: 160px;}
 .user_Fun{float: left;width: 100%;background: white;}
-.user_FunCon{float: left;width: 100%;padding: 0.3125rem 0.911rem 0.979rem 1.25rem;}
-.user_AccountTitle{height:0.5729rem;line-height: 0.5729rem;color: #2F53B1;border-bottom: 1px solid #2F53B1;text-align: left;font-weight: bold; font-size:0.21875rem; }
+.user_FunCon{float: left;width: 100%;padding: 35px 90px 90px 100px;}
+.user_AccountTitle{height:55px;line-height: 55px;color: #2F53B1;font-weight: bold; border-bottom: 1px solid #01237C;text-align: left;font-size:21px; }
 
 
 /*账号信息*/
-.account_List {margin-top: 0.2rem;}
-.account_List li{float: left;width: 100%;margin-top:0.26rem;font-size:0.182rem;color: #000;}
-.account_List li>p,.account_List li>div{float: left;line-height:0.364rem;height: 0.364rem;font-size:0.182rem;color: #000;}
-.account_List li>p{width: 1.61rem;text-align: right;}
-.account_List li input{float: left;width: 1.67rem;margin-right:0.1rem;border: 0;outline: none;background:#E6E6E6;color: #333;box-sizing: border-box;padding-left: 15px; }
-.acc_Btn{font-size: 0.1562rem;color: white;float: left;cursor: pointer; background: #2F53B1;width: 1.09rem;text-align: center;line-height:0.364rem;height: 0.364rem;border-radius: 5px;}
+.account_List {margin-top: 20px;}
+.account_List li{float: left;width: 100%;margin-top:30px;font-size:18px;color: #000;}
+.account_List li>p,.account_List li>div{float: left;line-height:35px;height: 35px;font-size:18px;color: #000;}
+.account_List li>p{width: 160px;text-align: right;}
+.account_List li input{float: left;width: 165px;margin-right:10px;border: 0;outline: none;background:#E6E6E6;color: #333;box-sizing: border-box;padding-left: 15px; }
+.acc_Btn{font-size: 15px;color: white;float: left;cursor: pointer; background: #2F53B1;width: 108px;text-align: center;line-height:35px;height: 35px;border-radius: 5px;}
 .acc_Btn:hover {background:#768ECC ;}
-.acc_Ok{font-size: 0.1562rem;margin-top:0.677rem;margin-left: 1.5625rem;  color: white;float: left;cursor: pointer; background:  #2F53B1;width: 1.22rem;text-align: center;line-height:0.364rem;height: 0.364rem;border-radius: 5px;}
+.acc_Ok{font-size: 16px;margin-top:70px;margin-left: 160px;  color: white;float: left;cursor: pointer; background:  #2F53B1;width: 125px;text-align: center;line-height:35px;height: 35px;border-radius: 5px;}
 .acc_Ok:hover{background: #768ECC;}
 
-.layui-layer-content{line-height: 103px;font-size: 20px;color: #333;}
+.layui-layer{z-index: 9999999;}
+.layui-layer-content{line-height: 103px;font-size: 16px;color: #333;}
 .layui-layer-title{background:#2F53B1;color: white;font-size: 18px;}
 .layui-layer-hui{background: white;box-shadow: 0 0 15px #666;}
 
 
 /*签章管理*/
-.user_SignList{margin-top:0.182rem;height: 4rem; padding: 0.2rem; background: #E6E6E6;border: 1px solid #ccc;overflow-y: scroll;overflow-x: hidden;}
-.user_SignList li{width: 1.3rem;height: 1.3rem;margin-right: 0.15rem;margin-bottom: 0.15rem; float: left;background: white;}
+.user_SignList{margin-top:20px;height: 400px; padding: 20px; background: #E6E6E6;border: 1px solid #ccc;overflow-y: scroll;overflow-x: hidden;}
+.user_SignList li{width: 130px;height: 130px;margin-right: 15px;margin-bottom: 15px; float: left;background: white;}
 .user_SignList li:nth-child(4n){margin-right: 0;}
 .user_SignList li img{width: 100%;}
-.sign_Choice{margin-top:0.286rem; }
-.sign_file{float: left;cursor: pointer; margin-left:0.3125rem;width: 1.4rem;height: 0.9rem;border: 1px dotted #BBBBBB;border-radius: 10px; }
-.sign_file img { color: #BBBBBB;font-size: 40px;display: block;width: 0.41rem; margin: 0.1rem auto;text-align: center;}
-.sign_file span{font-size: 0.167rem;color: #8D8D8D;text-align: center;display: block;width: 100%;}
-.sign_Fade,.link_Fade{position: fixed;display: none; width: 100%;height: 100%;background: rgba(0,0,0,0.5);top: 0;left: 0;z-index: 99999;}
-.sign_Get{width: 3.2rem;padding:0.156rem; height:4.3rem;box-sizing: border-box;border-radius: 10px;box-shadow: 0 0 20px #333; position: absolute;top: 0;right: 0;left: 0;bottom: 0;margin: auto;background: white;}
-.file_Btn{float: left;width:1.3rem;height: 0.33rem;cursor: pointer; line-height: 0.33rem; border-radius: 5px;background: #2F53B1;color: white;text-align: center;font-size: 0.15rem;}
+.sign_Choice{margin-top:30px; }
+.sign_file{float: left;cursor: pointer; margin-left:40px;width: 140px;height: 90px;border: 1px dotted #BBBBBB;border-radius: 10px; }
+.sign_file img { color: #BBBBBB;font-size: 40px;display: block;width: 40px; margin: 10px auto;text-align: center;}
+.sign_file span{font-size: 16px;color: #8D8D8D;text-align: center;display: block;width: 100%;}
+
+.sign_Fade,.link_Fade{display: none; position: fixed;width: 100%;height: 100%;background: rgba(0,0,0,0.5);top: 0;left: 0;z-index: 99999;}
+.sign_Get{width: 380px;padding:30px; height:460px;box-sizing: border-box;border-radius: 10px;box-shadow: 0 0 20px #333; position: absolute;top: 0;right: 0;left: 0;bottom: 0;margin: auto;background: white;}
+.file_Btn{float: left;width:130px;height: 35px;cursor: pointer; line-height: 35px; border-radius: 5px;background: #2F53B1;color: white;text-align: center;font-size: 16px;}
 .file_Btn:hover{background:#253F85; }
-.file_Name{float: left;width:1.45rem;height: 0.33rem;line-height: 0.33rem;margin-left: 0.1rem;font-size: 0.15rem; border: 1px solid #212121;background:white;color: #333;box-sizing: border-box;padding-left: 15px; }
-.fileImgBox{width: 2.5rem;height: 2.5rem;background: #E6E6E6;margin: 0.2rem auto;}
-.sign_GetBtnBox{margin-top: 0.2rem;padding: 0 0.15rem;}
-.sign_GetBtnBox p{float: left; width:1.2rem;height: 0.33rem;display: inline; cursor: pointer; line-height: 0.33rem; border-radius: 5px;background: #2F53B1;color: white;text-align: center;font-size: 0.15rem;}
-.sign_GetBtnBox p:last-child{float: right;}
-.sign_GetBtnBox p:hover{background: #6279B6;}
+.file_Name{float: left;width:145px;height: 35px;line-height: 35px; margin-left: 10px;font-size: 16px; border: 1px solid #212121;background:white;color: #333;box-sizing: border-box;padding-left: 15px; }
+.fileImgBox{width: 250px;height: 250px;background: #E6E6E6;margin: 20px auto;}
+.sign_GetBtnBox{margin-top: 20px;padding: 0 15px;}
+
+.sign_GetBtnBox button{float: left; width:120px;height: 35px;display: inline; cursor: pointer; line-height: 35px; border-radius: 5px;background: #2F53B1;color: white;text-align: center;font-size: 16px;}
+.sign_GetBtnBox button:last-child{float: right;}
+.sign_GetBtnBox button:hover{background: #6279B6;}
 #slider span{outline: none;border-radius: 100%;transition: none;background: white;}
 
 /*联系人管理*/
-.link_Con{padding:0 0.78rem;}
-.link_Serch{margin-top:0.49rem; }
-.link_Serch>span{font-size: 0.1562rem;height:0.3125rem;line-height: 0.3125rem;float: left; }
-.serch_Box{float: left;height: 0.3125rem;line-height: 0.3125rem;margin: 0 0.2rem;background: #E6E6E6;width: 2.1rem;}
-.serch_Box img{height: 0.3125rem;float: left}
-.serch_Box input{height: 0.3125rem;line-height: 0.3125rem;width: 1.5rem;font-size: 0.1562rem; float: left;padding-left: 15px;box-sizing: border-box;border: 0;outline: none;background: none;}
-.serch_Btn{float: left; width:1.2rem;height: 0.33rem;display: inline; cursor: pointer; line-height: 0.33rem; border-radius: 5px;background: #2F53B1;color: white;text-align: center;font-size: 0.15rem;}
+.link_Con{padding:0 80px;}
+.link_Serch{margin-top:40px; }
+.link_Serch>span{font-size:16px;height:30px;line-height: 30px;float: left; }
+.serch_Box{float: left;height:30px;line-height:30px;margin: 0 10px;background: #E6E6E6;width: 210px;}
+.serch_Box img{height: 30px; float: left}
+.serch_Box input{height: 30px;line-height: 30px;width: 150px;font-size: 16px; float: left;padding-left: 15px;box-sizing: border-box;border: 0;outline: none;background: none;}
+.serch_Btn{float: left; width:110px;height: 30px;display: inline; cursor: pointer; line-height:30px; border-radius: 5px;background: #2F53B1;color: white;text-align: center;font-size: 16px;}
 .serch_Btn:hover{background: #6279B6;}
-.serch_List{margin-top: 0.3rem;padding-bottom: 1rem;}
-.serch_List li{float: left;width: 100%;height: 0.52rem;line-height: 0.52rem;}
-.serch_List .serch_top{background:#2F53B1!important;border: 0; }
-.serch_List .serch_top span{color: white;font-size:0.15625rem;}
+.serch_List{margin-top: 25px;padding-bottom:40px;}
+.serch_List li{float: left;width: 100%;height: 50px;line-height:50px;}
+.serch_List .serch_top{background:#2F53B1!important;border: 0; height: 33px;line-height: 33px;}
+.serch_List .serch_top span{color: white;font-size:16px;font-weight: bold;height: 33px;line-height: 33px;}
 .serch_List li:nth-child(2n) {background: #E6E6E6;border-bottom: 1px solid #395191;border-top: 1px solid #395191;}
-.serch_List li span{font-size: 0.125rem;text-align: center;float: left;height: 0.52rem;line-height: 0.52rem;}
+.serch_List li span{font-size: 16px;text-align: center;float: left;height: 50px;line-height: 50px;}
 .serch_List li span:nth-child(1){width: 15%;}
 .serch_List li span:nth-child(2){width: 20%;}
 .serch_List li span:nth-child(3){width: 25%;}
 .serch_List li span:nth-child(4){width: 20%;}
 .serch_List li span:nth-child(5){width: 20%;}
-.link_Add{;width:3.8rem;height: 3.75rem;padding: 0.39rem; box-sizing: border-box;border-radius: 10px;box-shadow: 0 0 20px #333; position: absolute;top: 0;right: 0;left: 0;bottom: 0;margin: auto;background: white;}
-.link_Add_Con{margin-bottom: 0.3rem;}
-.link_Add_Tit{float: left;width: 100%;height:0.46875rem;line-height: 0.46875rem;font-size: 0.1875rem; }
-.link_Add_Box{float: left;height: 0.3125rem;line-height: 0.3125rem;background: white;border: 1px solid #000; width: 100%;}
-.link_Add_Box img{height: 0.3125rem;float: left}
-.link_Add_Box input{height: 0.3125rem;line-height: 0.3125rem;width: 2rem;font-size: 0.1562rem; float: left;padding-left: 15px;box-sizing: border-box;border: 0;outline: none;background: none;}
-.link_Add_Btn{float: left; width:100%;margin-top: 0.2rem; height:  0.3125rem;display: inline; cursor: pointer; line-height:  0.3125rem; border-radius: 5px;background: #2F53B1;color: white;text-align: center;font-size: 0.15rem;}
+
+
+
+.link_Add{;width:420px;height:370px;padding: 40px; box-sizing: border-box;border-radius: 10px;box-shadow: 0 0 20px #333; position: absolute;top: 0;right: 0;left: 0;bottom: 0;margin: auto;background: white;}
+.link_Add_Con{margin-bottom: 20px;}
+.link_Add_Tit{float: left;width: 100%;height:40px;line-height: 40px;font-size: 18px; }
+.link_Add_Box{float: left;height:35px;line-height:35px;background: white;border: 1px solid #000; width: 100%;}
+.link_Add_Box img{height: 35px;float: left}
+.link_Add_Box input{height: 35px;line-height: 35px;width: 200px;font-size:16px; float: left;padding-left: 15px;box-sizing: border-box;border: 0;outline: none;background: none;}
+.link_Add_Btn{float: left; width:100%;margin-top: 20px; height:  35px;display: inline; cursor: pointer; line-height:  35px; border-radius: 5px;background: #2F53B1;color: white;text-align: center;font-size: 15px;}
 .link_Add_Btn:hover{background:#253F85; }
-.link_Close{width: 40px;position: absolute;right: 20px;top: 20px;cursor: pointer;}
+.link_Close{width: 30px;position: absolute;right: 20px;top: 20px;cursor: pointer;}
 
 
