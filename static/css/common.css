@@ -59,4 +59,5 @@ button >a{text-decoration: none;color: white;}
 button >a:hover{text-decoration: none;color: white;}
 .new_Content{width: 990px;box-sizing: border-box;padding: 0;margin: 0 auto;overflow: hidden;}
 .fade_Box{position: fixed;z-index: 99999999;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.5);display: none;}
+.box_Center{position: absolute;top: 0;left: 0;bottom: 0;right: 0;margin: auto;background: white;border-radius: 10px;box-sizing: border-box;}
 
