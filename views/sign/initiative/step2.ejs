@@ -1,17 +1,8 @@
-<%include ../layout/webheader.ejs%>
+<%include ../../layout/webheader.ejs%>
 <link rel="stylesheet" href="/static/css/model/sign.css">
-<link rel="stylesheet" href="/static/css/layout/header.css">
-<div class="header_Fix">
-  <div class="header">
-    <a href="/"><img src="/static/img/layout/l0.png" class="logo" alt=""></a>
-    <img src="/static/img/layout/l1.png" class="logo" alt="">
-    <ul class="menu">
-      <li ><a href="/user">用户中心</a></li>
-      <li class="this_menu"><a href="/sign">合同签署</a></li>
-      <li><a href="/manage">合同管理</a></li>
-    </ul>
-  </div>
-</div>
+<%include ../layout/signheader.ejs%>
+<%include ../layout/addsignature.ejs%>
+<%include ../layout/identity.ejs%>
 <div class="new_Content">
   <div class="sign_Con">
     <div class="single"><button class="back_Manage"><a href="/sign">上一步</a></button></div>
@@ -51,7 +42,7 @@
             </div>
           </div>
           <span class="intro_Drag">（左键点击拖动至右侧合适位置）</span>
-          <button class="change_Btn">更改签署</button>
+          <button class="change_Btn" id="change_Btn">更改签署</button>
         </div>
       </div>
       <div class="sign_Right">
@@ -60,7 +51,7 @@
           <img id="bac" src="/static/img/demo/signDemo/bag.jpg" alt="">
         </div>
         <div class="sign_Opr single">
-          <button><a href="/agreesign">发起签署</a></button>
+          <button id="start_Sign">发起签署</button>
           <button><a href="/draftsign">存草稿</a></button>
         </div>
       </div>
@@ -68,3 +59,20 @@
   </div>
 </div>
 <script src="/static/js/sign/index.js"></script>
+
+<script>
+  stepEvt();
+  function stepEvt() {
+      $('#change_Btn').on('click',function () {
+          $('#main_Evt').css('display','block');
+          $('#code_Box').css('display','none');
+          $('#file_Box').css('display','none');
+          $('#sign_Box').css('display','none');
+          $('#add_sign').stop(true).fadeIn(150);
+      })
+      $('#start_Sign').on('click',function () {
+          $('#iden_Box').stop(true).fadeIn(150);
+      })
+  }
+</script>
+<%include ../../layout/nullfooter.ejs%>

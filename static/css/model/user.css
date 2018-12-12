@@ -71,7 +71,7 @@
 .sign_GetBtnBox button{float: left; width:120px;height: 35px;display: inline; cursor: pointer; line-height: 35px; border-radius: 5px;background: #2F53B1;color: white;text-align: center;font-size: 16px;}
 .sign_GetBtnBox button:last-child{float: right;}
 .sign_GetBtnBox button:hover{background: #6279B6;}
-#slider span{outline: none;border-radius: 100%;transition: none;background: white;}
+#slider span{outline: none;border-radius: 100%;transition: none;background: white;cursor: pointer;}
 
 /*联系人管理*/
 .link_Con{padding:0 80px;}

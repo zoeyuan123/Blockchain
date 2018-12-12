@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="/static/css/model/signlayout.css">
+<div id="add_sign" class="fade_Box" >
+  <div id="main_Evt" class="add_Box box_Center ">
+    <img src="/static/img/layout/close.png" alt="" class="fade_Close">
+    <button class="add_Btn" id="code_Evt">在线扫码添加签章</button>
+    <button class="add_Btn" id="file_Evt">从本地添加签章</button>
+    <button class="add_Btn" id="sign_Evt">从“我的签章”添加</button>
+  </div>
+  <!--在线扫码添加签章-->
+  <div id="code_Box" class="code_Box box_Center dino">
+    <img src="/static/img/layout/close.png" alt="" class="fade_Close">
+    <img src="/static/img/code.png" class="code_Img" alt="">
+    <p class="code_Txt single">扫码添加签章</p>
+  </div>
+  <!--从本地添加签章-->
+  <div id="file_Box" class="sign_Get dino">
+    <button class="file_Btn">选择本地文件</button>
+    <p class="file_Name">/asda</p>
+    <div style="clear: both;"></div>
+    <div class="fileImgBox"></div>
+    <div id="slider" style="transition: none;"></div>
+    <div class="single sign_GetBtnBox">
+      <button>保&nbsp;存</button>
+      <button class="fade_cancel">取&nbsp;消</button>
+    </div>
+  </div>
+  <!--从我的签章添加-->
+  <div id="sign_Box" class="sign_List_Box box_Center dino">
+    <img src="/static/img/layout/close.png" style="right: 10px;top: 10px;" alt="" class="fade_Close">
+    <ul class="single user_SignList">
+      <li><img src="/static/img/logo.png" alt=""></li>
+      <li><img src="/static/img/logo.png" alt=""></li>
+      <li><img src="/static/img/logo.png" alt=""></li>
+      <li><img src="/static/img/logo.png" alt=""></li>
+      <li><img src="/static/img/logo.png" alt=""></li>
+      <li><img src="/static/img/logo.png" alt=""></li>
+      <li><img src="/static/img/logo.png" alt=""></li>
+      <li><img src="/static/img/logo.png" alt=""></li>
+      <li><img src="/static/img/logo.png" alt=""></li>
+      <li><img src="/static/img/logo.png" alt=""></li>
+      <li><img src="/static/img/logo.png" alt=""></li>
+    </ul>
+    <div class="single user_BtnBox">
+      <button>确&nbsp;定</button>
+      <button class="fade_cancel">取&nbsp;消</button>
+    </div>
+  </div>
+</div>
+
+
+<script>
+    add_Fade_Evt()
+    function add_Fade_Evt() {
+        $('.fade_Close,.fade_cancel').on('click',function () {
+            $(this).parents('.fade_Box').stop(true).fadeOut(150);
+        })
+        $( "#slider" ).slider({
+            value: 50
+        });
+        $('#code_Evt').on('click',function () {
+            $('#main_Evt').css('display','none');
+            $('#code_Box').stop(true).fadeIn(150);
+        })
+        $('#file_Evt').on('click',function () {
+            $('#main_Evt').css('display','none');
+            $('#file_Box').stop(true).fadeIn(150);
+        })
+        $('#sign_Evt').on('click',function () {
+            $('#main_Evt').css('display','none');
+            $('#sign_Box').stop(true).fadeIn(150);
+        })
+    }
+
+</script>
+

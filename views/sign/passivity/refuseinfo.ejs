@@ -1,17 +1,6 @@
-<%include ../layout/webheader.ejs%>
+<%include ../../layout/webheader.ejs%>
 <link rel="stylesheet" href="/static/css/model/sign.css">
-<link rel="stylesheet" href="/static/css/layout/header.css">
-<div class="header_Fix">
-  <div class="header">
-    <a href="/"><img src="/static/img/layout/l0.png" class="logo" alt=""></a>
-    <img src="/static/img/layout/l1.png" class="logo" alt="">
-    <ul class="menu">
-      <li ><a href="/user">用户中心</a></li>
-      <li class="this_menu"><a href="/sign">合同签署</a></li>
-      <li><a href="/manage">合同管理</a></li>
-    </ul>
-  </div>
-</div>
+<%include ../layout/signheader.ejs%>
 <div class="new_Content">
   <div class="single info_Box">
     <div class="single info_IntroBox">
@@ -80,7 +69,8 @@
       <span class="fs14">（点击在区块链浏览器中查询）</span>
     </div>
     <div class="single back_SignBtn">
-      <button><a href="/sign">返回主页</a></button>
+      <button><a href="/passivesign">返回主页</a></button>
     </div>
   </div>
 </div>
+<%include ../../layout/nullfooter.ejs%>

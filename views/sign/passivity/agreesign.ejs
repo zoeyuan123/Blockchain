@@ -1,23 +1,12 @@
-<%include ../layout/webheader.ejs%>
+<%include ../../layout/webheader.ejs%>
 <link rel="stylesheet" href="/static/css/model/sign.css">
-<link rel="stylesheet" href="/static/css/layout/header.css">
-<div class="header_Fix">
-  <div class="header">
-    <a href="/"><img src="/static/img/layout/l0.png" class="logo" alt=""></a>
-    <img src="/static/img/layout/l1.png" class="logo" alt="">
-    <ul class="menu">
-      <li ><a href="/user">用户中心</a></li>
-      <li class="this_menu"><a href="/sign">合同签署</a></li>
-      <li><a href="/manage">合同管理</a></li>
-    </ul>
-  </div>
-</div>
+<%include ../layout/signheader.ejs%>
 <div class="new_Content">
   <div class="single sign_Result">
     <div class="single">
-      <img class="result_Img" src="/static/img/model/caogao.png" alt="">
+      <img class="result_Img" src="/static/img/model/ok.png" alt="">
     </div>
-    <p class="single result_Tit">您的草稿已保存</p>
+    <p class="single result_Tit">您已成功签署合约</p>
     <div class="single sign_Name">
       <span>合同名称：XXX合同</span>
       <span>截止日期：2018/01/01</span>
@@ -41,7 +30,8 @@
     </ul>
     <div class="single result_Opr">
       <button><a href="/agreeinfo">合同信息</a></button>
-      <button><a href="/sign">返回主页</a></button>
+      <button><a href="/passivesign">返回主页</a></button>
     </div>
   </div>
 </div>
+<%include ../../layout/nullfooter.ejs%>
