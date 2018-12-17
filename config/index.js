@@ -16,7 +16,7 @@ const config = {
         port: 7800
     },
     //后台服务端url
-    javaServerUrl:'',
+    javaServerUrl:'http://39.96.22.77:80',
     expires: 200 * 60 * 1000,
     ttl:60*60,//过期时间 秒
     session_secret: '23212@!#@asdfad34dfsfaskdjfasd',

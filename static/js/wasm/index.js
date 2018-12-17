@@ -10,8 +10,6 @@ var funcReceived = new Promise(resolve => {
     AllFuncReceivedResolve = resolve;
 });
 
-
-
 window.setFuncOver = function() {
     console.log("wasm 加载完成")
     AllFuncReceivedResolve();
@@ -466,6 +464,7 @@ function creat_Key() {
         echo.box.loader("生成中....请等待")
         var creData = {alias: "testKey", auth: "123456"}
         createKey(creData).then(res => {
+            console.log(res)
             var reqData = JSON.parse(res.data);
             reqData.auth = creData.auth;
             console.log(reqData);

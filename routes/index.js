@@ -2,7 +2,12 @@
 const express = require('express');
 const router = express.Router();
 const index = require('../controllers/index');
+const manage = require('../controllers/manage');
+
 // const wasm = require('../controllers/wasm');
+
+
+
 router.get(/(^\/$)|^(\/index)/, index.index);
 
 //首页
@@ -48,8 +53,6 @@ router.post("/refusesign", index.refusesign);
 router.get("/refuseinfo", index.refuseinfo);
 router.post("/refuseinfo", index.refuseinfo);
 
-
-
 /***********************合同签署*********End****************/
 
 
@@ -57,21 +60,29 @@ router.post("/refuseinfo", index.refuseinfo);
 
 
 /***********************合同管理********Start*****************/
-
-router.get("/manage", index.manage);//合同签署管理
-
+//合同签署管理页面
+router.get("/manage", manage.index);
+//全部文件
+router.post("/contractAll", manage.contractAll);
+//待我签
+router.post("/waitMineList", manage.waitMineList);
+//待对方签
+router.post("/waitOtherList", manage.waitOtherList);
+//已完成
+router.post("/completeList", manage.completeList);
+//已拒绝
+router.post("/refuseList", manage.refuseList);
+//草稿箱
+router.post("/draftList", manage.draftList);
+//删除草稿箱
+router.post('/deleteDraft',manage.deleteDraft)
 /***********************合同管理********End*****************/
-
-
-
-
 
 router.get("/wasm", index.wasm);//wasm
 //私钥解密
 router.post('/wasmKey',index.wasmKey);
 //签名demo
 router.get("/signDemo", index.signDemo);
-
 //异常
 router.get("/404", index.i404);//404
 router.get("/403", index.i403);//403

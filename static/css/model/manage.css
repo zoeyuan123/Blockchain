@@ -18,52 +18,52 @@
 
 /*全部文件*/
 .total_List{border-top: 1px solid #355096; }
-.total_List span{width: 18%;}
+.total_List span{width: 20%;}
 .total_List>li{border-bottom: 1px solid #355096;}
-.total_List>li span:last-child{width: 10%;}
 .total_List .top{background:#8091BD; }
 
 
 
 /*待我签*/
 .wait_Me{border-top: 1px solid #355096; }
-.wait_Me span{width: 22.5%;}
+.wait_Me span{width: 25%;}
 .wait_Me>li{border-bottom: 1px solid #355096;}
-.wait_Me>li span:last-child{width: 10%;}
 .wait_Me .top{background:#8091BD; }
 .wait_Me>li>span:first-child{cursor: pointer;}
+.wait_Me>li>span:first-child:hover{text-decoration: underline;}
 .wait_Me .top>span:first-child{cursor: default;}
-
+.wait_Me .top>span:first-child:hover{text-decoration: none;}
 
 /*待对方签*/
 .wait_You{border-top: 1px solid #355096; }
-.wait_You span{width: 22.5%;}
+.wait_You span{width: 25%;}
 .wait_You>li{border-bottom: 1px solid #355096;}
-.wait_You>li span:last-child{width: 10%;}
 .wait_You .top{background:#8091BD; }
 .wait_You>li>span:first-child{cursor: pointer;}
+.wait_You>li>span:first-child:hover{text-decoration: underline;}
 .wait_You .top>span:first-child{cursor: default;}
-
+.wait_You .top>span:first-child:hover{text-decoration: none;}
 
 /*已完成*/
 .sign_Done{border-top: 1px solid #355096; }
-.sign_Done span{width: 22.5%;}
+.sign_Done span{width: 25%;}
 .sign_Done>li{border-bottom: 1px solid #355096;}
-.sign_Done>li span:last-child{width: 10%;}
 .sign_Done .top{background:#8091BD; }
 .sign_Done>li>span:first-child{cursor: pointer;}
+.sign_Done>li>span:first-child:hover{text-decoration: underline;}
 .sign_Done .top>span:first-child{cursor: default;}
+.sign_Done .top>span:first-child:hover{text-decoration: none;}
 
 
 /*已拒签*/
 .refuse_List{border-top: 1px solid #355096; }
-.refuse_List span{width: 18%;}
+.refuse_List span{width: 20%;}
 .refuse_List>li{border-bottom: 1px solid #355096;}
-.refuse_List>li span:last-child{width: 10%;}
 .refuse_List .top{background:#8091BD; }
 .refuse_List>li>span:first-child{cursor: pointer;}
+.refuse_List>li>span:first-child:hover{text-decoration: underline;}
 .refuse_List .top>span:first-child{cursor: default;}
-
+.refuse_List .top>span:first-child:hover{text-decoration: none;}
 
 /*已拒签*/
 .sign_Draft{border-top: 1px solid #355096; }
@@ -72,7 +72,9 @@
 .sign_Draft>li span:last-child{width: 10%;}
 .sign_Draft .top{background:#8091BD; }
 .sign_Draft>li>span:first-child{cursor: pointer;}
+.sign_Draft>li>span:first-child:hover{text-decoration: underline;}
 .sign_Draft .top>span:first-child{cursor: default;}
+.sign_Draft .top>span:first-child:hover{text-decoration: none;}
 
 
 

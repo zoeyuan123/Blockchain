@@ -1,0 +1,7 @@
+[2018-12-14 10:28:33.965] [INFO] app - ::ffff:127.0.0.1 - - "GET / HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+[2018-12-14 10:28:36.220] [INFO] app - ::ffff:127.0.0.1 - - "GET /wasm HTTP/1.1" 200 - "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+[2018-12-14 10:28:40.025] [INFO] app - ::ffff:127.0.0.1 - - "POST /wasmKey HTTP/1.1" 200 700 "http://127.0.0.1:7800/wasm" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+[2018-12-14 14:22:20.261] [INFO] app - ::ffff:127.0.0.1 - - "GET / HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+[2018-12-14 14:22:23.037] [INFO] app - ::ffff:127.0.0.1 - - "GET /wasm HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+[2018-12-14 14:22:27.185] [INFO] app - ::ffff:127.0.0.1 - - "GET /static/plugin/swiper/swiper.min.js.map HTTP/1.1" 404 430 "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+[2018-12-14 14:22:32.445] [INFO] app - ::ffff:127.0.0.1 - - "POST /wasmKey HTTP/1.1" 200 700 "http://127.0.0.1:7800/wasm" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"

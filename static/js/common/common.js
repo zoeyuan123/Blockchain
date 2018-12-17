@@ -15,19 +15,9 @@ echo.box = echo.box || {};
             timeout: 30000,//30秒
             cache: false,
             async: isAsync,
-           dataType:"json",
+            dataType:"json",
             beforeSend: function (XHR) {
                 console.log("start=="+isAsync+new Date());
-                if (tpStr=="post"||tpStr=="put"||tpStr=="delete") {
-                    var _csrfToken=$("._csrf").val(); // 后期csrf加密
-                    if(_csrfToken) {
-                        XHR.setRequestHeader("x-csrf-token",_csrfToken);
-                    }
-                    var _guardToken=$("#_guardToken").val();
-                    if(_guardToken) {
-                        XHR.setRequestHeader("guard-token",_guardToken);
-                    }
-                }
             },
             success: success,
             error:  function (xml, status) {
@@ -36,17 +26,14 @@ echo.box = echo.box || {};
                     try{
                         errResult=JSON.parse(xml.responseText);
                         layer.msg(errResult.msg);
-                        err&&err(errResult);
-                        //无效的上下文，跳转到默认
-                        if(errResult.status==-4){
-                            location.href='/layout';
-                        }
                         return;
                     }catch(e){
                         layer.msg(xml.responseText);
+                        return
                     }
                 }else{
                     layer.msg("请求没有响应");
+                    return
                 }
                 err&&err(xml);
             }

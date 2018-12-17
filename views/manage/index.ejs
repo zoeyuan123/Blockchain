@@ -17,123 +17,20 @@
       <li>已拒签</li>
       <li>草稿箱</li>
     </ul>
+      <!--列表区-->
     <ul class="single mana_TabCon" id="mana_TabCon">
       <!--全部-->
-      <li>
-        <ul class="single total_List">
-          <li class="top">
-            <span>合同名称</span>
-            <span>发起人</span>
-            <span>发起时间</span>
-            <span>截止时间</span>
-            <span>状态</span>
-            <span></span>
-          </li>
-          <li>
-            <span>XXXX合同</span>
-            <span>张三啊</span>
-            <span>2018-01-12</span>
-            <span>2018-01-12</span>
-            <span>待我签</span>
-            <span><img src="/static/img/model/del.png" class="del_Ico" alt=""></span>
-          </li>
-        </ul>
-      </li>
+      <li id="total_List"></li>
       <!--待我签-->
-      <li>
-        <ul class="single wait_Me">
-          <li class="top">
-            <span>合同名称</span>
-            <span>发起人</span>
-            <span>发起时间</span>
-            <span>截止时间</span>
-            <span></span>
-          </li>
-          <li>
-            <span class="to_Passivesign">XXXX合同</span>
-            <span>张三啊</span>
-            <span>2018-01-12</span>
-            <span>2018-01-12</span>
-            <span><img src="/static/img/model/del.png" class="del_Ico" alt=""></span>
-          </li>
-        </ul>
-      </li>
+      <li id="wait_Me"></li>
       <!--待对方签-->
-      <li>
-        <ul class="wait_You">
-          <li class="top">
-            <span>合同名称</span>
-            <span>待签方</span>
-            <span>发起时间</span>
-            <span>截止时间</span>
-            <span></span>
-          </li>
-          <li>
-            <span class="to_Signinfo">XXXX合同</span>
-            <span>张三啊</span>
-            <span>2018-01-12</span>
-            <span>2018-01-12</span>
-            <span><img src="/static/img/model/del.png" class="del_Ico" alt=""></span>
-          </li>
-        </ul>
-      </li>
+      <li id="wait_You"></li>
       <!--已完成-->
-      <li>
-        <ul class="single sign_Done">
-          <li class="top">
-            <span>合同名称</span>
-            <span>签署方</span>
-            <span>发起时间</span>
-            <span>完成时间</span>
-            <span></span>
-          </li>
-          <li>
-            <span class="to_Agreeinfo">XXXX合同</span>
-            <span>张三啊</span>
-            <span>2018-01-12</span>
-            <span>2018-01-12</span>
-            <span><img src="/static/img/model/del.png" class="del_Ico" alt=""></span>
-          </li>
-        </ul>
-      </li>
+      <li id="sign_Done"></li>
       <!--已拒签-->
-      <li>
-        <ul class="single  refuse_List">
-          <li class="top">
-            <span>合同名称</span>
-            <span>发起人</span>
-            <span>发起时间</span>
-            <span>拒签主体</span>
-            <span>拒签时间</span>
-            <span></span>
-          </li>
-          <li>
-            <span class="to_Refuseinfo">XXXX合同</span>
-            <span>张三啊</span>
-            <span>2018-01-12</span>
-            <span>Echonessy</span>
-            <span>2018-01-12</span>
-            <span><img src="/static/img/model/del.png" class="del_Ico" alt=""></span>
-          </li>
-        </ul>
-      </li>
+      <li id="refuse_List"></li>
       <!--草稿箱-->
-      <li>
-        <ul class="single sign_Draft">
-          <li class="top">
-            <span>合同名称</span>
-            <span>签署对象</span>
-            <span>最后一次编辑时间</span>
-            <span></span>
-          </li>
-          <li>
-            <span class="to_Signnext">XXXX合同</span>
-            <span>张三啊</span>
-            <span>2018-01-12</span>
-            <span><img src="/static/img/model/del.png" class="del_Ico" alt=""></span>
-          </li>
-        </ul>
-      </li>
+      <li id="sign_Draft"></li>
     </ul>
   </div>
 </div>
@@ -147,63 +44,7 @@
     </div>
   </div>
 </div>
-
-<script>
-  //Tab切换
-  mana_TabEvt()
-  function mana_TabEvt() {
-      $('#mana_Tab>li').on('click',function () {
-          $(this).siblings().removeClass();
-          $(this).addClass('this_Tab');
-          $('#mana_TabCon>li').css('display','none');
-          $('#mana_TabCon>li').eq($(this).index()).stop(true).fadeIn(150);
-      })
-      $('.del_Ico').on('click',function () {
-          var that = this;
-          $('#is_Del').stop(true).fadeIn(150);
-          $('.del_Ok').on('click',function (evt) {
-              stopBubble(evt)
-              $(that).parent('span').parent('li').remove();
-              $('#is_Del').stop(true).fadeOut(150);
-          })
-          $('.del_No').on('click',function (evt) {
-              stopBubble(evt)
-              $('#is_Del').stop(true).fadeOut(150);
-          })
-      })
-  }
-//  阻止冒泡
-  function stopBubble(evt) {
-      var evt = evt||window.event;
-      if (evt.stopPropagation) {
-          evt.stopPropagation();
-      }
-      else {
-          window.event.cancelBubble = true;
-      }
-  }
-//模拟跳转
-  mockRedirect()
-  function mockRedirect() {
-      $('.to_Passivesign').on('click',function () {
-          window.location.href  = '/passivesign'
-      })
-      $('.to_Signinfo').on('click',function () {
-          window.location.href  = '/signinfo'
-      })
-      $('.to_Agreeinfo').on('click',function () {
-          window.location.href  = '/agreeinfo'
-      })
-      $('.to_Refuseinfo').on('click',function () {
-          window.location.href  = '/refuseinfo'
-      })
-      $('.to_Signnext').on('click',function () {
-          window.location.href  = '/signnext'
-      })
-  }
-
-</script>
-
+<script src="/static/js/manage/index.js"></script>
 <%include ../layout/nullfooter.ejs%>
 
 
