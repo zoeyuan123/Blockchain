@@ -4,7 +4,7 @@
 .mana_SearchBox img{width: 40px;float: left;cursor: pointer;}
 .mana_SearchBox input{border: 0;background: none;outline: none;float: left;width: 250px;box-sizing: border-box;;line-height: 40px;font-size: 18px;}
 .mana_Tab{border: 1px solid #2F53B1;margin-bottom: 30px;}
-.mana_Tab li{border-right: 1px solid #2F53B1;float: left;width: 16.66%;height: 45px;background: white; text-align: center;line-height: 45px;font-size: 20px;cursor: pointer;}
+.mana_Tab li{border-right: 1px solid #2F53B1;float: left;width: 16.666666666%;height: 45px;background: white; text-align: center;line-height: 45px;font-size: 20px;cursor: pointer;}
 .mana_Tab li:last-child{border: 0;}
 .mana_Tab .this_Tab{background:#2F53B1;color: white;}
 .mana_TabCon li{float: left;width: 100%;background: white; box-sizing: border-box;;font-size: 16px;text-align: center;}
