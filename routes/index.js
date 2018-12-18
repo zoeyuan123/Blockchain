@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const index = require('../controllers/index');
 const manage = require('../controllers/manage');
+const login = require('../controllers/login');
 
 // const wasm = require('../controllers/wasm');
 
@@ -14,6 +15,27 @@ router.get(/(^\/$)|^(\/index)/, index.index);
 router.get("/", index.index);//首页
 router.get("/usercer", index.usercer);//未认证用户中心
 router.get("/user", index.user);//用户中心
+
+/***********************登录注册*********Start****************/
+// 获取登陆短信验证码
+router.post("/loginVerifyCode", login.loginVerifyCode);
+// 登陆
+router.post("/login", login.login);
+// 获取注册短信验证码
+router.post("/registeredVerifyCode", login.registeredVerifyCode);
+// 注册
+router.post("/registered", login.registered);
+// 校验手机号是否存在
+router.post("/checkPhoneExist", login.checkPhoneExist);
+// 校验用户是否已登陆
+router.post("/isLogin", login.isLogin);
+/***********************登录注册*********End****************/
+
+
+
+
+
+
 
 
 /***********************合同签署*********Start****************/
