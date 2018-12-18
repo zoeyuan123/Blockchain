@@ -1,6 +1,7 @@
 /*!Index 路由*/
 const express = require('express');
 const router = express.Router();
+const common = require('../controllers/common');
 const index = require('../controllers/index');
 const manage = require('../controllers/manage');
 const login = require('../controllers/login');

@@ -14,7 +14,6 @@ function creat_Key() {
     })
 }
 
-
 //创建私钥公钥
 function createKeyAuth(auth) {
     var creData = {alias: "testKey", auth}
@@ -40,3 +39,4 @@ function createSignMessage(signData) {
         echo.box.alert(err)
     })
 }
+

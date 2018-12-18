@@ -53,6 +53,19 @@ echo.box = echo.box || {};
         }
         thisAjax('post', url, data, success, error,isAsync);
     };
+
+    ajax.callback = function (data, success) {
+        var this_Time = null;
+        if(this_Time) {clearTimeout(this_Time)}
+        if(data.reqCode == '0000') {
+            return success();
+        } else if(data.reqCode == '0001') {
+            layer.msg('未登录....即将跳转首页')
+            this_Time = setTimeout(function () {
+                window.location.href = '/index';
+            },2000)
+        }
+    }
     return ajax;
 })(echo.ajax || {});
 
