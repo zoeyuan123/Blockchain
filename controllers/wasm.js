@@ -17,7 +17,26 @@ var encrypt = function (key, iv, data) {
     crypted = new Buffer(crypted, 'binary').toString('base64');
     return crypted;
 };
-
+//wasmKey
+exports.wasmKey = function (req, res) {
+    let reqData = req.body;
+    console.log(reqData);
+    // let cryptoData = reqData.crypto;
+    // let cipher = cryptoData.cipher;
+    // let ciphertext = cryptoData.ciphertext;
+    // let cipherparams = cryptoData.cipherparams;
+    // let iv = cipherparams.iv;
+    // let key = reqData.auth;
+    // console.log(cipher)
+    // console.log(key)
+    // console.log(iv)
+    // ciphertext = new Buffer(ciphertext, 'base64').toString('binary');
+    // let decipher = crypto.createDecipheriv(cipher, key, iv);
+    // let decoded = decipher.update(ciphertext, 'binary', 'utf8');
+    // decoded += decipher.final('utf8');
+    // console.log(decoded);
+    return res.json(reqData)
+};
 /**
  * 解密方法
  * @param key      解密的key

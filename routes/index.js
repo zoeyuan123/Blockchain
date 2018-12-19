@@ -5,6 +5,7 @@ const common = require('../controllers/common');
 const index = require('../controllers/index');
 const manage = require('../controllers/manage');
 const login = require('../controllers/login');
+const key = require('../controllers/key');
 
 // const wasm = require('../controllers/wasm');
 
@@ -35,6 +36,13 @@ router.post("/isLogin", login.isLogin);
 /***********************登录注册*********End****************/
 
 
+/***********************文件读写*********Start****************/
+// 私钥文件写入
+router.post("/writeKeyFile", key.writeKeyFile);
+// 私钥文件读取
+router.post("/readKeyFile", key.readKeyFile);
+//
+/***********************文件读写*********End****************/
 
 
 
@@ -105,7 +113,7 @@ router.post('/deleteDraft',manage.deleteDraft)
 
 router.get("/wasm", index.wasm);//wasm
 //私钥解密
-router.post('/wasmKey',index.wasmKey);
+// router.post('/wasmKey',index.wasmKey);
 //签名demo
 router.get("/signDemo", index.signDemo);
 //异常

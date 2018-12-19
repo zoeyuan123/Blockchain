@@ -39,7 +39,6 @@ module.exports.getMethod = function (source_url) {
 
 //POST
 module.exports.postMethod = function (source_url, json,req) {
-    console.log(req.headers)
     return new Promise(function (resolve, reject) {
         var  ServerCookie = '';
         if (!json) {
@@ -48,8 +47,8 @@ module.exports.postMethod = function (source_url, json,req) {
         source_url = getUrlData(source_url,json);
         if(req) {
             if(req.headers) {
-                if(req.headers.cookie) {
-                    ServerCookie = req.headers.cookie;
+                if(req.headers.reqc) {
+                    ServerCookie = req.headers.reqc;
                 }
             }
         }

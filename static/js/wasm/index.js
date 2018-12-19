@@ -8,17 +8,29 @@ function creat_Key() {
         //调用创建秘钥函数
         //alias 秘钥别名
         //auth 密码
-        echo.box.loader("生成中....请等待")
         var auth = $("#auth").val();
-        createKeyAuth(auth)
+        var alias = $("#alias").val();
+        if(!auth) {layer.msg('请输入密码');return}
+        if(!alias) {layer.msg('请输入用户名');return}
+        echo.box.loader("生成中....请等待")
+        createKeyAuth(alias,auth)
+    })
+    $('#read_Key').on('click',function () {
+        var auth = $("#read_auth").val();
+        var alias = $("#read_alias").val();
+        if(!auth) {layer.msg('请输入密码');return}
+        if(!alias) {layer.msg('请输入用户名');return}
+        echo.box.loader("读取中....请等待")
+        readKeyFile(alias,auth)
     })
 }
 
 //创建私钥公钥
-function createKeyAuth(auth) {
-    var creData = {alias: "testKey", auth}
+function createKeyAuth(alias,auth) {
+    var creData = {alias: alias, auth}
     createKey(creData).then(res => {
-        console.log(res)
+        console.log(res.data)
+        writeKeyFile(alias,auth,res.data);
         var reqData = JSON.parse(res.data);
         $('#creatKey').html(res.data)
         reqData.auth = auth;
@@ -40,3 +52,31 @@ function createSignMessage(signData) {
     })
 }
 
+//文件写入
+
+function writeKeyFile(alias,auth,keyJson,callback) {
+    var SubData = {};
+    var Url = '/writeKeyFile';
+    SubData.keyJson = keyJson;
+    SubData.alias = alias;
+    SubData.auth = auth;
+    echo.ajax.post(Url,SubData,function (res) {
+        console.log(res);
+    })
+}
+
+
+
+//文件读取
+function readKeyFile(alias,auth) {
+    var SubData = {};
+    var Url = '/readKeyFile';
+    SubData.alias = alias;
+    SubData.auth = auth;
+    echo.ajax.post(Url,SubData,function (res) {
+        echo.ajax.callback( res,function () {
+            echo.box.close();
+            $("#read_Key_Data").html(res.data);
+        })
+    })
+}

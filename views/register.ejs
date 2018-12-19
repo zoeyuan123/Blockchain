@@ -19,47 +19,59 @@
             <ul class="single userList">
                 <li class="single">
                     <p>姓名：</p>
-                    <div><input type="text"></div>
+                    <div><input type="text" id="name"></div>
                 </li>
                 <li class="single">
                     <p>身份证号：</p>
-                    <div><input type="text"></div>
+                    <div><input type="text" id="idCard"></div>
                 </li>
                 <li class="single">
                     <p>手机号：</p>
-                    <div><input type="text" class="in1"></div>
+                    <div><input type="text" id="phone" maxlength="11" class="in1"></div>
                 </li>
                 <li class="single">
                     <p>验证码：</p>
                     <div>
-                        <input type="text" class="in1">
+                        <input type="text" class="in1" id="verifyCode">
                         <span class=" userSendBtn">发送验证码</span>
                     </div>
                 </li>
                 <li class="single">
                     <p>上传本人照片：</p>
                     <div><img src="/static/img/model/upload.png" alt=""></div>
+                    <input type="hidden" id="memberImg" value="https://avatars0.githubusercontent.com/u/20438557?s=460&v=4">
                 </li>
                 <li class="single">
                     <p>上传身份证正面：</p>
                     <div><img src="/static/img/model/upload.png" alt=""></div>
+                    <input type="hidden" id="idCardFrontImg" value="https://avatars0.githubusercontent.com/u/20438557?s=460&v=4">
                 </li>
                 <li class="single">
                     <p>上传身份证反面：</p>
                     <div><img src="/static/img/model/upload.png" alt=""></div>
+                    <input type="hidden" id="idCardBackImg" value="https://avatars0.githubusercontent.com/u/20438557?s=460&v=4">
                 </li>
             </ul>
         </div>
         <div class="single userBox">
             <div class="single userTitle">公私钥生成</div>
             <div class="single keyBox">
-                <span class="single keyTxt">您的公钥：j28hq83h4foq8h</span>
-                <div class="single"><p class="keyBtn kb1">私钥文件下载</p></div>
-                <div class="single"><p class="keyBtn kb2">确定</p></div>
+                <input type="text" class="alias" disabled id="alias" placeholder="同步手机号">
+                <input type="text" class="auth" id="auth" placeholder="请输入私钥密码">
+                <span style="clear: both;"></span>
+                <span class="litip">*温馨提示,此密码不可修改,不可找回,功能操作都需要密码校验,请牢记</span>
+                <div class="single"><p class="keyBtn kb1" id="creat_Key">点击生成公私钥</p></div>
+                <span class="single keyTxt">您的公钥：</span>
+                <span class="publicKeys" id="publicKeys"></span>
+
+                <div class="single"><p class="keyBtn kb2" id="registerBtn">注册</p></div>
             </div>
 
         </div>
     </div>
 </div>
+<input type="hidden" id="keyData">
+
+<script src="/static/js/wasm/wasm.js"></script>
 <script src="/static/js/index/register.js"></script>
 <%include layout/nullfooter.ejs%>

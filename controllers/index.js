@@ -72,41 +72,11 @@ exports.refusesign = function (req, res) {
 exports.refuseinfo = function (req, res) {
     return res.render('sign/passivity/refuseinfo');
 };
-
-
-
-
-
-
-
-
-
-
-
 //合同管理
 exports.manage = function (req, res) {
     return res.render('manage/index');
 };
-//wasmKey
-exports.wasmKey = function (req, res) {
-    let reqData = req.body;
-    console.log(reqData);
-    // let cryptoData = reqData.crypto;
-    // let cipher = cryptoData.cipher;
-    // let ciphertext = cryptoData.ciphertext;
-    // let cipherparams = cryptoData.cipherparams;
-    // let iv = cipherparams.iv;
-    // let key = reqData.auth;
-    // console.log(cipher)
-    // console.log(key)
-    // console.log(iv)
-    // ciphertext = new Buffer(ciphertext, 'base64').toString('binary');
-    // let decipher = crypto.createDecipheriv(cipher, key, iv);
-    // let decoded = decipher.update(ciphertext, 'binary', 'utf8');
-    // decoded += decipher.final('utf8');
-    // console.log(decoded);
-   return res.json(reqData)
-};
+
 //404
 exports.i404 = function (req, res) {
     return res.render('error/404');

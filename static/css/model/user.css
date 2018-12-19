@@ -9,16 +9,22 @@
 .userList li{margin-top: 20px; }
 .userList li>p{width:270px;float: left;font-size:20px;text-align: right;height: 40px;line-height: 40px;; }
 .userList li>div{width:300px; float: left;font-size: 20px; text-align: left; }
-.userList li input{height: 40px;;width:300px;float: left;border: 0;outline: none;background:#E6E6E6;color: #333;box-sizing: border-box;padding-left: 15px; }
+.userList li input{height: 40px;;width:300px;font-size: 16px; float: left;border: 0;outline: none;background:#E6E6E6;color: #333;box-sizing: border-box;padding-left: 15px; }
 .userList li .in1,.userList li img{width:180px;}
+.userList li img{cursor: pointer;}
 .userSendBtn{float: right;width: 100px;cursor: pointer; box-sizing: border-box; height: 40px;text-align: center;line-height:40px;font-size: 16px;color: white;background: #768ECC;border-radius: 5px; }
 .keyBox{padding-top:35px; }
-.keyTxt{height:45px;line-height: 45px;text-align: center;font-size:21px;color: #8D8D8D;  }
+.alias,.auth{ height: 40px;  width: 300px;display: block;  margin:0 auto 30px auto;overflow: hidden;  border: 0;  outline: none;  background: #E6E6E6;  color: #333;  box-sizing: border-box;  padding-left: 15px;}
+.auth{margin-bottom: 10px;}
+.keyTxt{height:45px;line-height: 45px;text-align: center;font-size:21px;color: #8D8D8D; }
+.publicKeys{line-height: 30px;font-size:16px;color: #8D8D8D;display: block;width: 100%;box-sizing: border-box;padding: 0 20px;margin-bottom: 20px; }
 .keyBtn{width: 250px;margin: 0  auto; ;cursor: pointer; background: #768ECC; height:35px;line-height: 35px;text-align: center;color: white;font-size:16px;border-radius: 5px;  }
-.kb1{margin-bottom:  130px}
+.kb1{margin-bottom:  30px}
 .kb2{margin-bottom:68px; }
 .keyBtn:hover{background: #6279B6;}
 .userSendBtn:hover{background: #6279B6;}
+.publicKeys{border: 0;outline: none;background: none;color: #8D8D8D;}
+.litip{float:left;width: 100%;height: 20px;line-height: 20px;font-size: 14px;color: #C42929;text-align: center;margin-bottom: 10px;}
 
 .fixed_Center{position: fixed;z-index: 1;width: 900px;height: 100%;padding-bottom: 80px;top: 80px;left: 0;right: 0;margin: auto}
 .h100{height: 100%;}
@@ -44,10 +50,6 @@
 .acc_Ok{font-size: 16px;margin-top:70px;margin-left: 160px;  color: white;float: left;cursor: pointer; background:  #2F53B1;width: 125px;text-align: center;line-height:35px;height: 35px;border-radius: 5px;}
 .acc_Ok:hover{background: #768ECC;}
 
-.layui-layer{z-index: 9999999;}
-.layui-layer-content{line-height: 103px;font-size: 16px;color: #333;}
-.layui-layer-title{background:#2F53B1;color: white;font-size: 18px;}
-.layui-layer-hui{background: white;box-shadow: 0 0 15px #666;}
 
 
 /*签章管理*/

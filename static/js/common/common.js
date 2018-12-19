@@ -5,7 +5,8 @@ window.echo = {}
 echo.ajax = echo.ajax || {};
 echo.box = echo.box || {};
 echo.fun = echo.fun || {};
-
+//初始化本地cookie缓存
+window.localStorage.setItem('cookie','');
 //ajax封装
 ( function(ajax) {
     function thisAjax (tpStr, url, data, success, err,isAsync) {
@@ -20,6 +21,10 @@ echo.fun = echo.fun || {};
             // dataType:"json",
             beforeSend: function (XHR) {
                 console.log("start=="+isAsync+new Date());
+                var sessionId = window.localStorage.getItem('cookie');
+                if(sessionId) {
+                    XHR.setRequestHeader('reqc','JSESSIONID='+sessionId);
+                }
             },
             success: success,
             error:  function (xml, status) {
@@ -57,6 +62,9 @@ echo.fun = echo.fun || {};
     };
 
     ajax.callback = function (data, success) {
+        if(data.sessionId) {
+            window.localStorage.setItem('cookie',data.sessionId);
+        }
         var this_Time = null;
         if(this_Time) {clearTimeout(this_Time)}
         if(data.reqCode == '0000') {
@@ -204,3 +212,33 @@ echo.fun = echo.fun || {};
     return fun;
 })(echo.fun || {});
 
+
+//文件写入
+
+function writeKeyFile(alias,auth,keyJson,callback) {
+    var SubData = {};
+    var Url = '/writeKeyFile';
+    SubData.keyJson = keyJson;
+    SubData.alias = alias;
+    SubData.auth = auth;
+    echo.ajax.post(Url,SubData,function (res) {
+        echo.ajax.callback( res,function () {
+            callback();
+            return;
+        })
+    })
+}
+
+//文件读取
+function readKeyFile(alias,auth,callback) {
+    var SubData = {};
+    var Url = '/readKeyFile';
+    SubData.alias = alias;
+    SubData.auth = auth;
+    echo.ajax.post(Url,SubData,function (res) {
+        echo.ajax.callback( res,function () {
+            callback();
+            return;
+        })
+    })
+}
