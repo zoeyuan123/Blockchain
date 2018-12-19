@@ -14,10 +14,10 @@ const getClientIp = (req) =>{
 const UserAgent = (req) =>{ return  req.headers['user-agent']; };
 
 exports.RequestkHead = (req,res,next) =>{
-    res.setHeader('Version', '1.0');
-    res.setHeader('Author', 'Echonessy');
-    res.setHeader('User-Ip', getClientIp(req));
-    res.setHeader('User-Agent', UserAgent(req));
+    res.setHeader('version', '1.0');
+    res.setHeader('author', 'Echonessy');
+    res.setHeader('userIp', getClientIp(req));
+    res.setHeader('userAgent', UserAgent(req));
     res.removeHeader('X-Powered-By');
     next();
 };

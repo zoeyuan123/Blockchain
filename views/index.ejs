@@ -6,16 +6,6 @@
     <%include layout/databox.ejs%>
     <%include model/login.ejs%>
 </div>
-<script>
-    fadeLogIn()
-    function fadeLogIn() {
-        $("#startSignBtn").on('click',function () {
-            $('#loginMain').stop(true).fadeIn(150);
-        })
-        $("#login_Close").on('click',function () {
-            $('#loginMain').stop(true).fadeOut(150);
-        })
-    }
-</script>
+
 <script src="/static/js/index/index.js"></script>
 <%include layout/nullfooter.ejs%>

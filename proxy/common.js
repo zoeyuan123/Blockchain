@@ -24,7 +24,6 @@ function getUrlData(url,data) {
 module.exports.getMethod = function (source_url) {
     return new Promise(function (resolve, reject) {
         request.get(source_url)
-            .set('Content-Type', 'application/json')
             .end(function (err, result) {
                 if (err || !result.ok) {
                     reject(err || "响应异常");
@@ -39,18 +38,27 @@ module.exports.getMethod = function (source_url) {
 };
 
 //POST
-module.exports.postMethod = function (source_url, json) {
+module.exports.postMethod = function (source_url, json,req) {
+    console.log(req.headers)
     return new Promise(function (resolve, reject) {
+        var  ServerCookie = '';
         if (!json) {
             json = {};
         }
-        source_url = getUrlData(source_url,json)
+        source_url = getUrlData(source_url,json);
+        if(req) {
+            if(req.headers) {
+                if(req.headers.cookie) {
+                    ServerCookie = req.headers.cookie;
+                }
+            }
+        }
         console.log("访问：" + source_url);
         console.log("参数：" + JSON.stringify(json));
+        console.log("请求Cookie："+ ServerCookie);
         request.post(source_url)
             .send(json)
-            .set('Content-Type', 'application/json')
-            .set('Accept', 'application/json')
+            .set('Cookie',ServerCookie)
             .end(function (err, res) {
                 if (!res) {
                     reject(new Error("请求没有响应"));
@@ -65,11 +73,12 @@ module.exports.postMethod = function (source_url, json) {
                 var obj;
                 try {
                     obj = JSON.parse(res.text);
-                    if (res.ok && (obj.result=="success")) {
-                        resolve(obj);
-                    } else {
-                        reject(new Error(obj.ErrMsg || ''));
-                    }
+                    resolve(obj);
+                    // if (res.ok && (obj.result=="success")) {
+                    //     resolve(obj);
+                    // } else {
+                    //     reject(new Error(obj.msg || '', obj.reqCode));
+                    // }
                 } catch (e) {
                     reject(new Error(res.text || '服务端异常！'));
                 }

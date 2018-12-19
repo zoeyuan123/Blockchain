@@ -45,8 +45,9 @@ exports.statusTip = function (res, statusCode, obj) {
     return res.status(statusCode).send(obj);
 };
 //服务器端异常的提示
-exports.serverExceptionTip = function (res, message) {
-    return res.status(httpStatus.ServerException).send(backResult(returnCode.systemError, message && message.Error || message, errLevel.error));
+exports.serverExceptionTip = function (res, message,reqCode) {
+    console.log(reqCode)
+    return res.status(httpStatus.ServerException).send(backResult(returnCode.systemError, message && message.Error || message, errLevel.error,reqCode));
 };
 
 /**
@@ -105,42 +106,27 @@ exports.handlerPromiseError = function (promise, res) {
     });
 }
 
-function backResult(status, message, errorLevel){
-    if(arguments.length==1 ){
-        return {
-            status:returnCode.success,
-            msg: status
-        };
-    }
-    if(arguments.length ==2 ){
-        return {
-            status:status,
-            msg: message
-        };
-    }
 
-    return {
-        msg: message, //信息
-        status:status, //对应enum中的backResultCode
-        errLevel: errorLevel//异常等级，用来标记底座或页面应该怎么显示提示信息
-    };
-}
-function backResult(status, message,data, errorLevel){
+function backResult(status, message,data, errorLevel,reqCode){
+
     if(arguments.length==1 ){
         return {
             status:returnCode.success,
+            reqCode:reqCode,
             msg: status
         };
     }
     if(arguments.length ==2 ){
         return {
             status:status,
+            reqCode:reqCode,
             msg: message
         };
     }
     if(arguments.length==3){
         return {
             status:status,
+            reqCode:reqCode,
             msg: message,
             data:data
         };
@@ -148,6 +134,7 @@ function backResult(status, message,data, errorLevel){
 
     return {
         msg: message, //信息
+        reqCode:reqCode,
         status:status, //对应enum中的backResultCode
         data:data,
         errLevel: errorLevel//异常等级，用来标记底座或页面应该怎么显示提示信息

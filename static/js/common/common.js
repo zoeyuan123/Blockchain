@@ -3,9 +3,10 @@
  */
 window.echo = {}
 echo.ajax = echo.ajax || {};
-echo.client = echo.client || {};
 echo.box = echo.box || {};
+echo.fun = echo.fun || {};
 
+//ajax封装
 ( function(ajax) {
     function thisAjax (tpStr, url, data, success, err,isAsync) {
         $.ajax({
@@ -14,8 +15,9 @@ echo.box = echo.box || {};
             data: data,
             timeout: 30000,//30秒
             cache: false,
+            xhrFields: { withCredentials: true },
             async: isAsync,
-            dataType:"json",
+            // dataType:"json",
             beforeSend: function (XHR) {
                 console.log("start=="+isAsync+new Date());
             },
@@ -58,35 +60,22 @@ echo.box = echo.box || {};
         var this_Time = null;
         if(this_Time) {clearTimeout(this_Time)}
         if(data.reqCode == '0000') {
-            return success();
+            success();
+            return
         } else if(data.reqCode == '0001') {
             layer.msg('未登录....即将跳转首页')
             this_Time = setTimeout(function () {
                 window.location.href = '/index';
             },2000)
+        } else {
+            layer.msg(data.msg);
+            return;
         }
     }
     return ajax;
 })(echo.ajax || {});
 
-
-( function(client) {
-    //识别设备执行
-    client.runMethod = function  (androidFun, iphoneFun) {
-        var sUserAgent = navigator.userAgent.toLowerCase();
-        var isIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
-        var isAndroid = sUserAgent.match(/android/i) == "android";
-        if(isAndroid) {
-            return androidFun();
-        } else if(isIphoneOs) {
-            return iphoneFun();
-        } else {
-            return;
-        }
-    };
-    return client;
-})(echo.client || {});
-
+//sweetAlert封装
 (function (box) {
     // options参考 https://notifyjs.com/
     box.tip = function (options) {
@@ -168,7 +157,50 @@ echo.box = echo.box || {};
     return box;
 })(echo.box || {});
 
+// 中间方法封装
+( function(fun) {
+    //识别设备执行
+    fun.runMethod = function  (androidFun, iphoneFun) {
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        var isIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+        var isAndroid = sUserAgent.match(/android/i) == "android";
+        if(isAndroid) {
+            return androidFun();
+        } else if(isIphoneOs) {
+            return iphoneFun();
+        } else {
+            return;
+        }
+    };
+    //获取验证码倒计时
+    fun.countDown = function (id) {
+        var timeCount = null;
+        var start = 60;
+        if(timeCount) {window.clearInterval(timeCount);}
+        timeCount = setInterval(function () {
+            start--;
+            if(start == 0) {
+                window.clearInterval(timeCount);
+                $(id).attr('disabled',false).css('color','').html('获取验证码')
+            } else {
+                $(id).attr('disabled',true).css('color','#C2C1C1').html(start +'s')
+            }
+        },1000)
+    }
+    // 身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X
+    fun.isCardNo = function (card) {
+        return (/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/).test(card);
+    }
+    //校验邮箱
+    fun.checkEmail = function (email) {
+        return (/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/).test(email);
+    }
+    //手机号码有误
+    fun.checkPhone = function (phone){
+        return (/^1(3|4|5|6|7|8|9)\d{9}$/).test(phone);
+    }
 
 
-
+    return fun;
+})(echo.fun || {});
 

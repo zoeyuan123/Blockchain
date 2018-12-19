@@ -11,13 +11,8 @@ const responseHelper = require('../common/response_helper');
 //校验用户是否已登陆
 exports.isLogin = function (req, res) {
     let reqData = req.body;
-    login.isLogin(reqData).then(function (data) {
-        console.log(data)
-        var result = data.result;
-        if(result == 'success') {
-            return res.json(data);
-        }
-        return responseHelper.serverExceptionTip(res, data.ErrMsg||'');
+    login.isLogin(reqData ,req).then(function (data) {
+        return res.json(data);
     }).catch(function (e) {
         return responseHelper.serverExceptionTip(res, e.message);
     });

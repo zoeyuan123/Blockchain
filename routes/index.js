@@ -14,8 +14,10 @@ router.get(/(^\/$)|^(\/index)/, index.index);
 
 //首页
 router.get("/", index.index);//首页
-router.get("/usercer", index.usercer);//未认证用户中心
-router.get("/user", index.user);//用户中心
+//注册
+router.get("/register", index.register);//
+// 用户中心
+router.get("/user", index.user);//
 
 /***********************登录注册*********Start****************/
 // 获取登陆短信验证码

@@ -52,11 +52,10 @@ $(function () {
     function getAllAjax() {
         var Url = '/contractAll';
         var SubData = {};
-        echo.ajax.post(Url,SubData,function (data) {
-            var result = data.result;
-            if(result == 'success') {
-                renderAllHtml(data.data)
-            }
+        echo.ajax.post(Url,SubData,function (res) {
+            echo.ajax.callback(res,function () {
+                renderAllHtml(res.data)
+            })
         })
     }
     //全部文件头部html
@@ -103,11 +102,10 @@ $(function () {
     function getWaitMineAjax() {
         var Url = '/waitMineList';
         var SubData = {};
-        echo.ajax.post(Url,SubData,function (data) {
-            var result = data.result;
-            if(result == 'success') {
-                renderWaitMineHtml(data.data)
-            }
+        echo.ajax.post(Url,SubData,function (res) {
+            echo.ajax.callback(res,function () {
+                renderWaitMineHtml(res.data)
+            })
         })
     }
     //待我签头部html
@@ -153,11 +151,10 @@ $(function () {
     function getWaitYouAjax() {
             var Url = '/waitOtherList';
             var SubData = {};
-            echo.ajax.post(Url,SubData,function (data) {
-                var result = data.result;
-                if(result == 'success') {
-                    renderWaitYouHtml(data.data)
-                }
+            echo.ajax.post(Url,SubData,function (res) {
+                echo.ajax.callback(res,function () {
+                    renderWaitYouHtml(res.data)
+                })
             })
         }
     //待对方签头部html
@@ -203,11 +200,10 @@ $(function () {
     function getDoneAjax() {
             var Url = '/completeList';
             var SubData = {};
-            echo.ajax.post(Url,SubData,function (data) {
-                var result = data.result;
-                if(result == 'success') {
-                    renderDoneHtml(data.data)
-                }
+            echo.ajax.post(Url,SubData,function (res) {
+                echo.ajax.callback(res,function () {
+                    renderDoneHtml(res.data)
+                })
             })
         }
     //已完成头部html
@@ -251,11 +247,10 @@ $(function () {
     function getRefuseAjax() {
             var Url = '/refuseList';
             var SubData = {};
-            echo.ajax.post(Url,SubData,function (data) {
-                var result = data.result;
-                if(result == 'success') {
-                    renderRefuseHtml(data.data)
-                }
+            echo.ajax.post(Url,SubData,function (res) {
+                echo.ajax.callback(res,function () {
+                    renderRefuseHtml(res.data)
+                })
             })
         }
     //已拒绝头部html
@@ -301,11 +296,10 @@ $(function () {
     function getDraftAjax() {
             var Url = '/draftList';
             var SubData = {};
-            echo.ajax.post(Url,SubData,function (data) {
-                var result = data.result;
-                if(result == 'success') {
-                    renderDraftHtml(data.data)
-                }
+            echo.ajax.post(Url,SubData,function (res) {
+                echo.ajax.callback(res,function () {
+                    renderDraftHtml(res.data)
+                })
             })
         }
     //已拒绝头部html
@@ -368,12 +362,11 @@ $(function () {
         var Url = '/deleteDraft';
         var SubData = {};
         SubData.id = id;
-        echo.ajax.post(Url,SubData,function (data) {
-            var result = data.result;
-            if(result == 'success') {
+        echo.ajax.post(Url,SubData,function (res) {
+            echo.ajax.callback(res,function () {
                 layer.msg('删除成功');
                 getDraftAjax();
-            }
+            })
         })
     }
 

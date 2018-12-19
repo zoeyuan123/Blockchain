@@ -9,13 +9,9 @@ const responseHelper = require('../common/response_helper');
 //获取登陆短信验证码
 exports.loginVerifyCode = function (req, res) {
     let reqData = req.body;
-    login.loginVerifyCode(reqData).then(function (data) {
-        console.log(data)
+    login.loginVerifyCode(reqData,req).then(function (data) {
         var result = data.result;
-        if(result == 'success') {
-            return res.json(data);
-        }
-        return responseHelper.serverExceptionTip(res, data.ErrMsg||'');
+        return res.json(data);
     }).catch(function (e) {
         return responseHelper.serverExceptionTip(res, e.message);
     });
@@ -24,13 +20,9 @@ exports.loginVerifyCode = function (req, res) {
 //登陆
 exports.login = function (req, res) {
     let reqData = req.body;
-    login.login(reqData).then(function (data) {
-        console.log(data)
+    login.login(reqData,req).then(function (data) {
         var result = data.result;
-        if(result == 'success') {
-            return res.json(data);
-        }
-        return responseHelper.serverExceptionTip(res, data.ErrMsg||'');
+        return res.json(data);
     }).catch(function (e) {
         return responseHelper.serverExceptionTip(res, e.message);
     });
@@ -39,13 +31,9 @@ exports.login = function (req, res) {
 //获取注册短信验证码
 exports.registeredVerifyCode = function (req, res) {
     let reqData = req.body;
-    login.registeredVerifyCode(reqData).then(function (data) {
-        console.log(data)
+    login.registeredVerifyCode(reqData,req).then(function (data) {
         var result = data.result;
-        if(result == 'success') {
-            return res.json(data);
-        }
-        return responseHelper.serverExceptionTip(res, data.ErrMsg||'');
+        return res.json(data);
     }).catch(function (e) {
         return responseHelper.serverExceptionTip(res, e.message);
     });
@@ -54,13 +42,9 @@ exports.registeredVerifyCode = function (req, res) {
 //注册
 exports.registered = function (req, res) {
     let reqData = req.body;
-    login.registered(reqData).then(function (data) {
-        console.log(data)
+    login.registered(reqData,req).then(function (data) {
         var result = data.result;
-        if(result == 'success') {
-            return res.json(data);
-        }
-        return responseHelper.serverExceptionTip(res, data.ErrMsg||'');
+        return res.json(data);
     }).catch(function (e) {
         return responseHelper.serverExceptionTip(res, e.message);
     });
@@ -69,13 +53,9 @@ exports.registered = function (req, res) {
 //校验手机号是否存在
 exports.checkPhoneExist = function (req, res) {
     let reqData = req.body;
-    login.checkPhoneExist(reqData).then(function (data) {
-        console.log(data)
+    login.checkPhoneExist(reqData,req).then(function (data) {
         var result = data.result;
-        if(result == 'success') {
-            return res.json(data);
-        }
-        return responseHelper.serverExceptionTip(res, data.ErrMsg||'');
+        return res.json(data);
     }).catch(function (e) {
         return responseHelper.serverExceptionTip(res, e.message);
     });
@@ -84,13 +64,9 @@ exports.checkPhoneExist = function (req, res) {
 //校验用户是否已登陆
 exports.isLogin = function (req, res) {
     let reqData = req.body;
-    login.isLogin(reqData).then(function (data) {
-        console.log(data)
+    login.isLogin(reqData,req).then(function (data) {
         var result = data.result;
-        if(result == 'success') {
-            return res.json(data);
-        }
-        return responseHelper.serverExceptionTip(res, data.ErrMsg||'');
+        return res.json(data);
     }).catch(function (e) {
         return responseHelper.serverExceptionTip(res, e.message);
     });

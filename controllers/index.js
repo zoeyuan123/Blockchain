@@ -9,8 +9,8 @@ exports.index = function (req, res) {
     return res.render('index');
 };
 //未认证用户中心
-exports.usercer = function (req, res) {
-    return res.render('user/usercer');
+exports.register = function (req, res) {
+    return res.render('register');
 };
 //认证后用户中心
 exports.user = function (req, res) {

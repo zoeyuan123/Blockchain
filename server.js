@@ -38,9 +38,16 @@ app.use(bodyParser.json());
 //创建 application/x-www-form-urlencoded 解析
 app.use(bodyParser.urlencoded({extended: true,limit:'1024kb'}));
 
-//Cookie 会话保持
+// //Cookie 会话保持
 app.use(require('cookie-parser')(config.session_secret));
-
+// //session
+app.use(session({
+    resave: true,
+    name: config.auth_cookie_name,
+    saveUninitialized: true,
+    secret: config.session_secret,
+    cookie: {expires: new Date(Date.now() + config.expires), maxAge: config.expires}
+}));
 //启动请求头配置
 app.use(request_Head.RequestkHead);
 

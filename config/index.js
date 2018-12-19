@@ -19,9 +19,8 @@ const config = {
     javaServerUrl:'http://39.96.22.77:80',
     expires: 200 * 60 * 1000,
     ttl:60*60,//过期时间 秒
-    session_secret: '23212@!#@asdfad34dfsfaskdjfasd',
-    auth_cookie_name: 'connect.sid',
-    // newrelic 是个用来监控网站性能的服务
+    session_secret: 'SDFKSBSDMDCLJOISSJDFHSJDHFASJ',
+    auth_cookie_name: 'SESSIONID',
     newrelic_key: 'yourkey',
     maxParallel:10//express层定时、轮询功能最大并发数
 };
