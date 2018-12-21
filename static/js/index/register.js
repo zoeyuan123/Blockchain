@@ -3,39 +3,23 @@
  */
 $(function () {
     var loader = null;
-    //检测手机号是否存在
-    function checkPhoneExist(phone,callback) {
-        var Url = '/checkPhoneExist';
-        var SubData = {}
-        SubData.phone = phone;
-        echo.ajax.post(Url,SubData,function (res) {
-            echo.ajax.callback(res,function () {
-                var isExist = res.data.isExist;
-                //存在
-                if(isExist) {
-                    layer.msg('用户已存在');
-                    return
-                } else {
-                    callback();
-                    return
-                }
-            })
-        })
-    }
-    //获取注册验证码Ajax
-    function registeredVerifyCode(phone) {
-        var Url = '/registeredVerifyCode';
-        var SubData = {}
-        SubData.phone = phone;
-        echo.ajax.post(Url,SubData,function (res) {
-            echo.ajax.callback(res,function () {
-                layer.msg('短信已发送');
-            })
-        })
-    }
     //事件集合
     clickEvt();
     function clickEvt() {
+        //获取注册验证码
+        $("#getVerifyCode").on('click',function () {
+            var phone = $("#phone").val();
+            if(!phone) {
+                layer.msg('请输入手机号');
+                return
+            }
+            if(!echo.fun.checkPhone(phone)) {
+                layer.msg('手机号码格式错误，请重新输入');
+                return
+            }
+            echo.fun.countDown(this); //倒计时
+            registeredVerifyCode(phone); // 获取登录验证码Ajax
+        })
         //手机号用户名同步
         $('#phone').on('input',function () {
             $("#alias").val($(this).val())
@@ -66,6 +50,36 @@ $(function () {
         // 注册
         $("#registerBtn").on('click',function () {
             registerBefore()
+        })
+    }
+    //检测手机号是否存在
+    function checkPhoneExist(phone,callback) {
+        var Url = '/checkPhoneExist';
+        var SubData = {}
+        SubData.phone = phone;
+        echo.ajax.post(Url,SubData,function (res) {
+            echo.ajax.callback(res,function () {
+                var isExist = res.data.isExist;
+                //存在
+                if(isExist) {
+                    layer.msg('用户已存在');
+                    return
+                } else {
+                    callback();
+                    return
+                }
+            })
+        })
+    }
+    //获取注册验证码Ajax
+    function registeredVerifyCode(phone) {
+        var Url = '/registeredVerifyCode';
+        var SubData = {}
+        SubData.phone = phone;
+        echo.ajax.post(Url,SubData,function (res) {
+            echo.ajax.callback(res,function () {
+                layer.msg('短信已发送');
+            })
         })
     }
     //创建私钥公钥
@@ -103,7 +117,7 @@ $(function () {
         if(!idCardFrontImg) {layer.msg('请上传身份证正面图片');return;}
         if(!idCardBackImg) {layer.msg('请上传身份证反面图片');return;}
         if(!publicKeys) {layer.msg('请获取公钥');return;}
-        registeredAjax();
+        checkPhoneExist(phone,registeredAjax);
     }
     //注册
     function registeredAjax() {
@@ -116,6 +130,7 @@ $(function () {
         SubData.memberImg = $('#memberImg').val();//本人照片地址
         SubData.idCardFrontImg = $('#idCardFrontImg').val();//身份证正面图片地址
         SubData.idCardBackImg = $('#idCardBackImg').val();//身份证反面图片地址
+        SubData.privateKeysFileUrl = ' ';//公钥地址
         SubData.publicKeys = $('#publicKeys').html();//公钥
         echo.ajax.post(Url,SubData,function (res) {
             echo.ajax.callback(res,function () {
@@ -124,23 +139,5 @@ $(function () {
             });
         })
     }
-
-
-
-
-
-
-
-//创建签名
-    function createSignMessage(signData) {
-        signMessage(signData).then(r =>{
-            console.log(r)
-            $('#signMessage').html(r.data)
-            echo.box.close();
-        }).catch(err => {
-            echo.box.alert(err)
-        })
-    }
-
 })
 

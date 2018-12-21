@@ -42,7 +42,7 @@
 /*账号信息*/
 .account_List {margin-top: 20px;}
 .account_List li{float: left;width: 100%;margin-top:30px;font-size:18px;color: #000;}
-.account_List li>p,.account_List li>div{float: left;line-height:35px;height: 35px;font-size:18px;color: #000;}
+.account_List li>p,.account_List li>div{float: left;line-height:35px;font-size:18px;color: #000;}
 .account_List li>p{width: 160px;text-align: right;}
 .account_List li input{float: left;width: 165px;margin-right:10px;border: 0;outline: none;background:#E6E6E6;color: #333;box-sizing: border-box;padding-left: 15px; }
 .acc_Btn{font-size: 15px;color: white;float: left;cursor: pointer; background: #2F53B1;width: 108px;text-align: center;line-height:35px;height: 35px;border-radius: 5px;}
@@ -89,12 +89,14 @@
 .serch_List .serch_top{background:#2F53B1!important;border: 0; height: 33px;line-height: 33px;}
 .serch_List .serch_top span{color: white;font-size:16px;font-weight: bold;height: 33px;line-height: 33px;}
 .serch_List li:nth-child(2n) {background: #E6E6E6;border-bottom: 1px solid #395191;border-top: 1px solid #395191;}
-.serch_List li span{font-size: 16px;text-align: center;float: left;height: 50px;line-height: 50px;}
+.serch_List li span{font-size: 16px;text-align: center;float: left;height: 50px;line-height: 50px; overflow: hidden;}
+.serch_List li input{font-size: 16px;text-align: center;float: left;height: 50px;line-height: 50px; overflow: hidden;border: 0;background: none;outline: none;}
 .serch_List li span:nth-child(1){width: 15%;}
 .serch_List li span:nth-child(2){width: 20%;}
 .serch_List li span:nth-child(3){width: 25%;}
 .serch_List li span:nth-child(4){width: 20%;}
 .serch_List li span:nth-child(5){width: 20%;}
+.serch_List li input{width: 20%;}
 
 
 

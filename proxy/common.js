@@ -13,11 +13,15 @@ function getUrlData(url,data) {
     }
     for(var i in data) {
         if(i != 'Headers') {
-            str+= i+"="+data[i]+"&"
+            if(!data[i]) {
+                str+= i+"&"
+            } else {
+                str+= i+"="+data[i]+"&"
+            }
         }
     }
     str = str.substr(0, str.length - 1);
-    return url+str;
+    return encodeURI(url+str);
 }
 
 //GET

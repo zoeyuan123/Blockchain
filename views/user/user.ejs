@@ -32,21 +32,5 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-<script>
-    leftTab()
-    function leftTab() {
-        $('#userLeft li').on('click',function () {
-            var i = $(this).index();
-            $(".user_Fun").css('display','none');
-            $(this).siblings().removeClass();
-            $(this).removeClass().addClass('this_UserMenu');
-            $("#user_Con .user_Fun").eq(i).stop(true).fadeIn(150);
-        })
-    }
-</script>
+<script src="/static/js/user/index.js"></script>
 <%include ../layout/nullfooter.ejs%>

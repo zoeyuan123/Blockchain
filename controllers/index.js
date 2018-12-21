@@ -3,7 +3,8 @@
  */
 const common = require("./common");
 const crypto = require('crypto');
-
+const index = require('../proxy/index')
+const responseHelper = require('../common/response_helper');
 //默认页面
 exports.index = function (req, res) {
     return res.render('index');
@@ -101,6 +102,64 @@ exports.i503 = function (req, res) {
 exports.signDemo = function (req, res) {
     return res.render('demo/signDemo');
 };
+
+
+
+/***************************主页和合同管理弹窗消息接口*********************************/
+
+//查询未读信息列表
+exports.messageUnread = function (req, res) {
+    let reqData = req.body;
+    index.messageUnread(reqData,req).then(function (data) {
+        var result = data.result;
+        return res.json(data);
+    }).catch(function (e) {
+        return responseHelper.serverExceptionTip(res, e.message);
+    });
+};
+
+
+//修改消息为已读
+exports.messageUpdateRead = function (req, res) {
+    let reqData = req.body;
+    index.messageUpdateRead(reqData,req).then(function (data) {
+        var result = data.result;
+        return res.json(data);
+    }).catch(function (e) {
+        return responseHelper.serverExceptionTip(res, e.message);
+    });
+};
+//首页统计
+exports.contractCount = function (req, res) {
+    let reqData = req.body;
+    index.contractCount(reqData,req).then(function (data) {
+        var result = data.result;
+        return res.json(data);
+    }).catch(function (e) {
+        return responseHelper.serverExceptionTip(res, e.message);
+    });
+};
+//查询我发起的合同信息
+exports.contractInitiate = function (req, res) {
+    let reqData = req.body;
+    index.contractInitiate(reqData,req).then(function (data) {
+        var result = data.result;
+        return res.json(data);
+    }).catch(function (e) {
+        return responseHelper.serverExceptionTip(res, e.message);
+    });
+};
+//查询合同详细信息
+exports.contractInfo = function (req, res) {
+    let reqData = req.body;
+    index.contractInfo(reqData,req).then(function (data) {
+        var result = data.result;
+        return res.json(data);
+    }).catch(function (e) {
+        return responseHelper.serverExceptionTip(res, e.message);
+    });
+};
+
 
 
 

@@ -3,53 +3,53 @@
         <span>联系人：</span>
         <div class="serch_Box">
             <img src="/static/img/model/serch.png" alt="">
-            <input type="text">
+            <input type="text" id="search">
         </div>
         <button class="serch_Btn" id="serch_Btn">添加联系人</button>
     </div>
     <ul class="single serch_List">
-        <li class="serch_top">
-            <span>姓名</span>
-            <span>公钥</span>
-            <span>单位</span>
-            <span>职位</span>
-            <span>备注</span>
-        </li>
-        <li>
-            <span>张三</span>
-            <span>asjkdahksjdhaj</span>
-            <span>区块链合同</span>
-            <span>经理</span>
-            <span>甲方</span>
-        </li>
-        <li>
-            <span>张三</span>
-            <span>asjkdahksjdhaj</span>
-            <span>区块链合同</span>
-            <span>经理</span>
-            <span>甲方</span>
-        </li>
-        <li>
-            <span>张三</span>
-            <span>asjkdahksjdhaj</span>
-            <span>区块链合同</span>
-            <span>经理</span>
-            <span>甲方</span>
-        </li>
-        <li>
-            <span>张三</span>
-            <span>asjkdahksjdhaj</span>
-            <span>区块链合同</span>
-            <span>经理</span>
-            <span>甲方</span>
-        </li>
-        <li>
-            <span>张三</span>
-            <span>asjkdahksjdhaj</span>
-            <span>区块链合同</span>
-            <span>经理</span>
-            <span>甲方</span>
-        </li>
+        <!--<li class="serch_top">-->
+            <!--<span>姓名</span>-->
+            <!--<span>公钥</span>-->
+            <!--<span>单位</span>-->
+            <!--<span>职位</span>-->
+            <!--<span>备注</span>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<span>张三</span>-->
+            <!--<span>asjkdahksjdhaj</span>-->
+            <!--<span>区块链合同</span>-->
+            <!--<span>经理</span>-->
+            <!--<span contenteditable="true">甲方</span>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<span>张三</span>-->
+            <!--<span>asjkdahksjdhaj</span>-->
+            <!--<span>区块链合同</span>-->
+            <!--<span>经理</span>-->
+            <!--<input type="text">-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<span>张三</span>-->
+            <!--<span>asjkdahksjdhaj</span>-->
+            <!--<span>区块链合同</span>-->
+            <!--<span>经理</span>-->
+            <!--<span>甲方</span>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<span>张三</span>-->
+            <!--<span>asjkdahksjdhaj</span>-->
+            <!--<span>区块链合同</span>-->
+            <!--<span>经理</span>-->
+            <!--<span>甲方</span>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<span>张三</span>-->
+            <!--<span>asjkdahksjdhaj</span>-->
+            <!--<span>区块链合同</span>-->
+            <!--<span>经理</span>-->
+            <!--<span>甲方</span>-->
+        <!--</li>-->
     </ul>
 </div>
 <div id="link_Fade" class="link_Fade">
@@ -59,32 +59,17 @@
             <p class="link_Add_Tit">通过手机号添加</p>
             <div class="link_Add_Box">
                 <img src="/static/img/model/serch.png" alt="">
-                <input type="text">
+                <input type="text" id="add_Phone">
             </div>
-            <button class="link_Add_Btn">确&nbsp;定</button>
+            <button class="link_Add_Btn addLinkEvt" data-type="PHONE">确&nbsp;定</button>
         </div>
         <div class="single link_Add_Con">
             <p class="link_Add_Tit">通过公钥添加</p>
             <div class="link_Add_Box">
                 <img src="/static/img/model/serch.png" alt="">
-                <input type="text">
+                <input type="text" id="add_Key">
             </div>
-            <button class="link_Add_Btn">确&nbsp;定</button>
+            <button class="link_Add_Btn addLinkEvt" data-type="PUBLIC_KEYS">确&nbsp;定</button>
         </div>
     </div>
 </div>
-
-<script>
-    fadeClose();
-    function fadeClose() {
-        $('#serch_Btn').on('click',function () {
-            $('#link_Fade').stop(true).fadeIn(150);
-        })
-        $('#link_Close').on('click',function () {
-            $('#link_Fade').stop(true).fadeOut(150);
-        })
-    }
-
-
-
-</script>

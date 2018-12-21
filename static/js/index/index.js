@@ -8,7 +8,6 @@ $(function () {
         isLogin();
         clickEvt();
     }
-
     //校验是否登录过
     function isLogin() {
         var Url = '/isLogin';
@@ -18,6 +17,7 @@ $(function () {
                 if(!isLogin) {
                     $('#loginMain').css('display','block');
                 } else {
+                    messageUnread();
                     $('#loginMain').css('display','none');
                 }
             })
@@ -83,4 +83,58 @@ $(function () {
             })
         })
     }
+    // 查询未读信息列表
+    function messageUnread() {
+        var Url = '/messageUnread';
+        echo.ajax.post(Url,null,function (res) {
+            echo.ajax.callback(res,function () {
+                console.log(res)
+            })
+        })
+    }
+    // 修改消息为已读
+    function messageUpdateRead(id) {
+        var Url = '/messageUpdateRead';
+        var SubData = {}
+        SubData.id = id;
+        echo.ajax.post(Url,SubData,function (res) {
+            echo.ajax.callback(res,function () {
+                console.log(res)
+            })
+        })
+    }
+    // 首页统计
+    function contractCount() {
+        var Url = '/contractCount';
+        echo.ajax.post(Url,null,function (res) {
+            echo.ajax.callback(res,function () {
+                console.log(res)
+            })
+        })
+    }
+
+    // 查询我发起的合同信息
+    function contractInitiate(contractNo) {
+        var Url = '/contractInitiate';
+        var SubData = {}
+        SubData.contractNo = contractNo;
+        echo.ajax.post(Url,SubData,function (res) {
+            echo.ajax.callback(res,function () {
+                console.log(res)
+            })
+        })
+    }
+    // 查询合同详细信息
+    function contractInfo(id) {
+        var Url = '/contractInfo';
+        var SubData = {}
+        SubData.id = id;
+        echo.ajax.post(Url,SubData,function (res) {
+            echo.ajax.callback(res,function () {
+                console.log(res)
+                layer.msg('短信已发送');
+            })
+        })
+    }
+
 })

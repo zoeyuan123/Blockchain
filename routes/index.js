@@ -3,16 +3,27 @@ const express = require('express');
 const router = express.Router();
 const common = require('../controllers/common');
 const index = require('../controllers/index');
+const user = require('../controllers/user');
 const manage = require('../controllers/manage');
 const login = require('../controllers/login');
 const key = require('../controllers/key');
 
 // const wasm = require('../controllers/wasm');
 
-
-
 router.get(/(^\/$)|^(\/index)/, index.index);
 
+
+router.get("/wasm", index.wasm);//wasm
+//私钥解密
+// router.post('/wasmKey',index.wasmKey);
+//签名demo
+router.get("/signDemo", index.signDemo);
+//异常
+router.get("/404", index.i404);//404
+router.get("/403", index.i403);//403
+router.get("/400", index.i400);//400
+router.get("/500", index.i500);//500
+router.get("/503", index.i503);//503
 //首页
 router.get("/", index.index);//首页
 //注册
@@ -36,6 +47,8 @@ router.post("/isLogin", login.isLogin);
 /***********************登录注册*********End****************/
 
 
+
+
 /***********************文件读写*********Start****************/
 // 私钥文件写入
 router.post("/writeKeyFile", key.writeKeyFile);
@@ -43,8 +56,6 @@ router.post("/writeKeyFile", key.writeKeyFile);
 router.post("/readKeyFile", key.readKeyFile);
 //
 /***********************文件读写*********End****************/
-
-
 
 
 
@@ -111,17 +122,39 @@ router.post("/draftList", manage.draftList);
 router.post('/deleteDraft',manage.deleteDraft)
 /***********************合同管理********End*****************/
 
-router.get("/wasm", index.wasm);//wasm
-//私钥解密
-// router.post('/wasmKey',index.wasmKey);
-//签名demo
-router.get("/signDemo", index.signDemo);
-//异常
-router.get("/404", index.i404);//404
-router.get("/403", index.i403);//403
-router.get("/400", index.i400);//400
-router.get("/500", index.i500);//500
-router.get("/503", index.i503);//503
+
+/***********************用户中心********Start*****************/
+//获取用户信息
+router.post('/memberinfo',user.memberinfo);
+//修改用户信息
+router.post('/memberUpdate',user.memberUpdate);
+//联系人管理列表查询
+router.post('/listSearch',user.listSearch);
+//添加联系人
+router.post('/contactAdd',user.contactAdd);
+//修改联系人备注
+router.post('/contactUpdate',user.contactUpdate);
+//查询用户签章
+router.post('/signatureInfo',user.signatureInfo);
+//添加修改签章
+router.post('/signatureAdd',user.signatureAdd);
+
+/***********************用户中心********End*****************/
+
+
+
+/***********************主页和合同管理弹窗消息接口********Start*****************/
+//查询未读信息列表
+router.post('/messageUnread',index.messageUnread);
+//修改消息为已读
+router.post('/messageUpdateRead',index.messageUpdateRead);
+//首页统计
+router.post('/contractCount',index.contractCount);
+//查询我发起的合同信息（只支持已完成和被拒签查询）
+router.post('/contractInitiate',index.contractInitiate);
+//查询合同详细信息
+router.post('/contractInfo',index.contractInfo);
+/***********************主页和合同管理弹窗消息接口********End*****************/
 
 
 

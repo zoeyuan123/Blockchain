@@ -6,7 +6,7 @@ echo.ajax = echo.ajax || {};
 echo.box = echo.box || {};
 echo.fun = echo.fun || {};
 //初始化本地cookie缓存
-window.localStorage.setItem('cookie','');
+// window.localStorage.setItem('cookie','');
 //ajax封装
 ( function(ajax) {
     function thisAjax (tpStr, url, data, success, err,isAsync) {
@@ -22,6 +22,7 @@ window.localStorage.setItem('cookie','');
             beforeSend: function (XHR) {
                 console.log("start=="+isAsync+new Date());
                 var sessionId = window.localStorage.getItem('cookie');
+                console.log(sessionId)
                 if(sessionId) {
                     XHR.setRequestHeader('reqc','JSESSIONID='+sessionId);
                 }
