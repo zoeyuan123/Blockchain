@@ -69,7 +69,7 @@ echo.fun = echo.fun || {};
         var this_Time = null;
         if(this_Time) {clearTimeout(this_Time)}
         if(data.reqCode == '0000') {
-            success(data);
+            success();
             return
         } else if(data.reqCode == '0001') {
             layer.msg('未登录....即将跳转首页')
