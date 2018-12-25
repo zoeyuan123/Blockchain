@@ -38,18 +38,18 @@
                 </li>
                 <li class="single">
                     <p>上传本人照片：</p>
-                    <div><img src="/static/img/model/upload.png" alt=""></div>
-                    <input type="hidden" id="memberImg" value="https://avatars0.githubusercontent.com/u/20438557?s=460&v=4">
+                    <div><img src="/static/img/model/upload.png" alt="" id="memberImgIco"  onclick="$('input[id=fileUser]').click();"></div>
+                    <input type="hidden" id="memberImg" value="">
                 </li>
                 <li class="single">
                     <p>上传身份证正面：</p>
-                    <div><img src="/static/img/model/upload.png" alt=""></div>
-                    <input type="hidden" id="idCardFrontImg" value="https://avatars0.githubusercontent.com/u/20438557?s=460&v=4">
+                    <div><img src="/static/img/model/upload.png" alt=""  id="idCardFrontImgIco"  onclick="$('input[id=fileidCardFront]').click();"></div>
+                    <input type="hidden" id="idCardFrontImg" value="">
                 </li>
                 <li class="single">
                     <p>上传身份证反面：</p>
-                    <div><img src="/static/img/model/upload.png" alt=""></div>
-                    <input type="hidden" id="idCardBackImg" value="https://avatars0.githubusercontent.com/u/20438557?s=460&v=4">
+                    <div><img src="/static/img/model/upload.png" alt=""  id="idCardBackImgIco"  onclick="$('input[id=fileidCardBack]').click();"></div>
+                    <input type="hidden" id="idCardBackImg" value="">
                 </li>
             </ul>
         </div>
@@ -71,6 +71,17 @@
     </div>
 </div>
 <input type="hidden" id="keyData">
+<form style="display: none;" id="fileUserForm" method="post">
+    <input  name="file" type="file" style="display: none;" accept = "image/*" id="fileUser"  data-header="">
+</form>
+<form style="display: none;" id="fileidCardFrontForm" method="post">
+    <input  name="file" type="file" style="display: none;" accept = "image/*" id="fileidCardFront"  data-header="">
+</form>
+<form style="display: none;" id="fileidCardBackForm" method="post">
+    <input  name="file" type="file" style="display: none;" accept = "image/*" id="fileidCardBack"  data-header="">
+</form>
+
+
 
 <script src="/static/js/wasm/wasm.js"></script>
 <script src="/static/js/index/register.js"></script>

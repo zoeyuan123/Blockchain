@@ -69,7 +69,7 @@ echo.fun = echo.fun || {};
         var this_Time = null;
         if(this_Time) {clearTimeout(this_Time)}
         if(data.reqCode == '0000') {
-            success();
+            success(data);
             return
         } else if(data.reqCode == '0001') {
             layer.msg('未登录....即将跳转首页')
@@ -81,6 +81,60 @@ echo.fun = echo.fun || {};
             return;
         }
     }
+
+    ajax.upldFile=function (url,formDom,fileDom,sucfunc,errfunc){
+        var Size = fileDom[0].files[0].size;
+        var action = url;
+        action = action+'?1=1'+'&sessionId='+fileDom.attr('data-header')
+        if(Size > 31457280) {
+            layer.msg("文件太大，请上传30M以内的文件");
+            return;
+        }
+        if(!action){
+            layer.msg("上传路径不能为空");
+            return;
+        }
+        if(!fileDom||!formDom){
+            layer.msg("文件不能为空");
+            return;
+        };
+        formDom.attr("action",action);
+        formDom.attr("enctype","multipart/form-data");
+        formDom.attr("method","post");
+        if(!fileDom.val()){
+            layer.msg("请选择文件");
+            return;
+        }
+        formDom.ajaxForm({
+            beforeSubmit:function(XHR){
+            },
+            success:function(data){
+                if(data.reqCode=="0000"){
+                    layer.msg("上传成功");
+                    fileDom.attr('data-resData',JSON.stringify(data.data.urls));
+                    sucfunc(data);
+                    return;
+                }else{
+                    layer.msg(data.msg);
+                    return;
+                }
+            },
+            error:function(data){
+                var err="操作超时";
+                if(data.responseText){
+                    try{
+                        if(JSON.parse(data.responseText).msg){
+                            err=JSON.parse(data.responseText).msg;
+                        }
+                    }catch (e){
+                        err=data.responseText;
+                    }
+                }
+                errfunc(err);
+                return;
+            } }).submit();
+    };
+
     return ajax;
 })(echo.ajax || {});
 
@@ -242,4 +296,21 @@ function readKeyFile(alias,auth,callback) {
             return;
         })
     })
+}
+//上传封装
+
+function uploadEvt(Url,formDom,fileDom,callBack) {
+    layer.msg('上传中...')
+    var sessionId = window.localStorage.getItem('cookie');
+    if(sessionId) {
+        $(fileDom).attr('data-header', sessionId);
+    }
+    var fileDom = $(fileDom);
+    var formDom = $(formDom);
+    if(!fileDom[0].files[0]) {layer.msg("请选择文件");return}
+    echo.ajax.upldFile(Url,formDom,fileDom,function (data) {
+        callBack(data);
+    },function (err) {
+
+    });
 }

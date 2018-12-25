@@ -3,7 +3,7 @@
  */
 $(function () {
     //点击事件集合
-    clickEvt()
+    clickEvt();
     function clickEvt() {
         $( "#slider" ).slider({
             value: 50
@@ -30,7 +30,7 @@ $(function () {
         });
     }
     // 获取用户信息
-    memberinfo()
+    memberinfo();
     function memberinfo() {
         var Url = '/memberinfo';
         echo.ajax.post(Url,null,function (res) {
@@ -69,7 +69,7 @@ $(function () {
         })
     }
     // 获取用户签章
-    signatureInfo()
+    signatureInfo();
     function signatureInfo() {
         var Url = '/signatureInfo';
         echo.ajax.post(Url,null,function (res) {
@@ -83,18 +83,14 @@ $(function () {
     function renderInfoImg(data) {
         if(!data) {return}
         var Html = '';
-        var Img = [];
-        if(data.url) {
-            Img = data.url.split(',');
+        for(var i=0; i<data.length;i++) {
+            Html += '<li><img src="data:image/png;base64,'+data[i].url+'" alt=""></li>';
         }
-        for(var i=0; i<Img.length;i++) {
-            Html += '<li><img src="'+Img[i]+'" alt=""></li>';
-        }
-        $("#user_SignList").html(Html).attr({
-            "data-id": data.id,
-            "data-mid": data.mid,
-            "data-addTime": data.addTime
-        });
+        // $("#user_SignList").html(Html).attr({
+        //     "data-id": data.id,
+        //     "data-mid": data.mid,
+        //     "data-addTime": data.addTime
+        // });
     }
     // 查询联系人
     function listSearch() {
@@ -119,11 +115,12 @@ $(function () {
         Html += '<span>备注</span>';
         Html += '</li>';
         if(data) {
+            console.log(data)
             for(var i=0;i<data.length;i++) {
                 var this_Data = data[i];
                 Html += '<li>';
                 Html += '<span>'+this_Data.name+'</span>';
-                Html += '<span>'+this_Data.publicKeys+'</span>';
+                Html += '<span title="'+this_Data.publicKeys+'">'+this_Data.publicKeys+'</span>';
                 Html += '<span>'+this_Data.company+'</span>';
                 Html += '<span>'+this_Data.position+'</span>';
                 Html += '<input type="text" class="updateRemark" data-phone="'+this_Data.phone+'" data-id="'+this_Data.id+'" value="'+this_Data.remark+'">';
@@ -156,11 +153,11 @@ $(function () {
         })
     }
     //添加联系人事件
-    addEvt()
+    addEvt();
     function addEvt() {
         $(".addLinkEvt").on('click',function () {
             var type = $(this).attr('data-type');
-            var search = type = 'PHONE'? $("#add_Phone").val():$("#add_Key").val()
+            var search = (type == 'PHONE'? $("#add_Phone").val():$("#add_Key").val())
             contactAdd(type,search)
         })
     }
@@ -181,6 +178,121 @@ $(function () {
         echo.ajax.post(Url,SubData,function (res) {
             echo.ajax.callback(res,function () {
                 layer.msg('更新成功');
+            })
+        })
+    }
+    //  图片裁剪
+    corpUpImgEvt();
+    function corpUpImgEvt() {
+        var $image = $('.img-container > img'),
+            options = {
+                aspectRatio: 1 / 1,
+                preview: '.img-preview',
+                crop: function (data) {}
+            };
+        $image.on({
+            'build.cropper': function (e) {
+                console.log(e.type);
+            },
+            'built.cropper': function (e) {
+                console.log(e.type);
+            },
+            'dragstart.cropper': function (e) {
+                console.log(e.type, e.dragType);
+            },
+            'dragmove.cropper': function (e) {
+                console.log(e.type, e.dragType);
+            },
+            'dragend.cropper': function (e) {
+                console.log(e.type, e.dragType);
+            },
+            'zoomin.cropper': function (e) {
+                console.log(e.type);
+            },
+            'zoomout.cropper': function (e) {
+                console.log(e.type);
+            }
+        }).cropper(options);
+        // Methods
+        $(document.body).off('click');
+        $(document.body).on('click', '[data-method]', function () {
+            var data = $(this).data(),
+                $target,
+                result;
+            if (data.method) {
+                data = $.extend({}, data); // Clone a new one
+                if (typeof data.target !== 'undefined') {
+                    $target = $(data.target);
+                    if (typeof data.option === 'undefined') {
+                        try {
+                            data.option = JSON.parse($target.val());
+                        } catch (e) {
+                            console.log(e.message);
+                        }
+                    }
+                }
+                result = $image.cropper(data.method, data.option);
+                if (data.method === 'getCroppedCanvas') {
+                    var url = result.toDataURL('image/png',0.5);
+                    $("#base64").val(url);
+                    signatureAdd(url)
+                    // uploadbase64(url)
+                }
+
+            }
+        });
+    }
+//    打开关闭
+    openEvt();
+    function openEvt() {
+        $("#openLocal").on('click',function () {
+            $("#localFade").fadeIn(150);
+        })
+        $("#cancelLocal").on('click',function () {
+            $("#localFade").fadeOut(150);
+        })
+    }
+    //自动上传
+    selfMotionUpload();
+    function selfMotionUpload() {
+        $("#fileLocal").on('change',function () {
+            uploadLocalFile();
+            var URL = window.URL || window.webkitURL,
+                blobURL;
+            var $image = $('.img-container > img')
+            var files = this.files, file;
+            if (files && files.length) {
+                file = files[0];
+                if (/^image\/\w+$/.test(file.type)) {
+                    blobURL = URL.createObjectURL(file);
+                    $image.one('built.cropper', function () {
+                        URL.revokeObjectURL(blobURL); // Revoke when load complete
+                    }).cropper('reset', true).cropper('replace', blobURL);
+                }
+            }
+        });
+
+    }
+//    上传
+    function uploadLocalFile() {
+        var Url = "/upload2";
+        var formDom = "#formLocal";
+        var fileDom = "#fileLocal";
+        uploadEvt(Url,formDom,fileDom,function (data) {
+            $("#img-corp").attr('src',data.data.urls[0]);
+            $("#base64Post").attr('data-header',data.sessionId);
+            corpEvt();
+        })
+    }
+//    添加签章
+    function signatureAdd(url) {
+        var Url = '/signatureAdd';
+        var SubData = {}
+        SubData.url = url;
+        echo.ajax.post(Url,SubData,function (res) {
+            echo.ajax.callback(res,function () {
+                layer.msg('添加成功');
+                signatureInfo();
             })
         })
     }

@@ -101,6 +101,9 @@ exports.i503 = function (req, res) {
 //电子签章Demo
 exports.signDemo = function (req, res) {
     return res.render('demo/signDemo');
+};//电子签章Demo
+exports.uploadDemo = function (req, res) {
+    return res.render('demo/upload');
 };
 
 
@@ -159,6 +162,8 @@ exports.contractInfo = function (req, res) {
         return responseHelper.serverExceptionTip(res, e.message);
     });
 };
+
+
 
 
 

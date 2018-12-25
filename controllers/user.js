@@ -65,7 +65,10 @@ exports.contactUpdate = function (req, res) {
 exports.signatureInfo = function (req, res) {
     let reqData = req.body;
     user.signatureInfo(reqData,req).then(function (data) {
-        var result = data.result;
+        var resData = data.data.url;
+        if(resData) {
+
+        }
         return res.json(data);
     }).catch(function (e) {
         return responseHelper.serverExceptionTip(res, e.message);
@@ -74,6 +77,12 @@ exports.signatureInfo = function (req, res) {
 //添加修改签章
 exports.signatureAdd = function (req, res) {
     let reqData = req.body;
+    console.log(reqData)
+    var url = reqData.url.split(',')[1];
+    reqData.url = url;
+    console.log('---------------reqData----------------')
+    console.log(url)
+    console.log('---------------reqData----------------')
     user.signatureAdd(reqData,req).then(function (data) {
         var result = data.result;
         return res.json(data);

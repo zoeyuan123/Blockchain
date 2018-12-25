@@ -15,6 +15,12 @@ const config = {
         host: '127.0.0.1',//
         port: 7800
     },
+    // 文件上传配置
+    upload: {
+        maxSize_img:3145728, //图片最大限制3M
+        maxSize_file:31457280 //文件最大限制30M
+        // maxSize_file:10485760 //文件最大限制10M
+    },
     //后台服务端url
     javaServerUrl:'http://39.96.22.77:80',
     expires: 200 * 60 * 1000,

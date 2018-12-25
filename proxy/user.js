@@ -34,7 +34,7 @@ module.exports.contactAdd = function (data,req) {
 module.exports.contactUpdate = function (data,req) {
     var url = config.javaServerUrl;
     var reqUrl=url+'/contact/update';
-    return common.postMethod(reqUrl,data);
+    return common.postMethod(reqUrl,data,req);
 };
 //查询用户签章
 module.exports.signatureInfo = function (data,req) {

@@ -8,7 +8,7 @@
 .mana_Tab li:last-child{border: 0;}
 .mana_Tab .this_Tab{background:#2F53B1;color: white;}
 .mana_TabCon li{float: left;width: 100%;background: white; box-sizing: border-box;;font-size: 16px;text-align: center;}
-.mana_TabCon span{box-sizing: border-box; white-space: nowrap; color: #333; overflow: hidden;  text-overflow: ellipsis;float: left;height: 45px;line-height: 45px;text-align: center;}
+.mana_TabCon span,.mana_TabCon a{box-sizing: border-box; white-space: nowrap; color: #333; overflow: hidden;  text-overflow: ellipsis;float: left;height: 45px;line-height: 45px;text-align: center;}
 .del_Ico{cursor: pointer;}
 .top span{font-weight: bold;}
 .mana_TabCon>li{display: none;}
@@ -46,6 +46,7 @@
 /*已完成*/
 .sign_Done{border-top: 1px solid #355096; }
 .sign_Done span{width: 25%;}
+.sign_Done a{width: 25%;}
 .sign_Done>li{border-bottom: 1px solid #355096;}
 .sign_Done .top{background:#8091BD; }
 .sign_Done>li>span:first-child{cursor: pointer;}

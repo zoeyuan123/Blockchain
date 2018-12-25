@@ -6,7 +6,10 @@
     <p class="single step_Tit">Step1 上传文件</p>
     <div class="single step_Box">
       <div class="step_file">
-        <img src="/static/img/model/upfile.png" alt="">
+        <img src="/static/img/model/upfile.png" id="fileContImg" alt="" onclick="$('input[id=fileCont]').click();">
+        <form  id="fileContForm" method="post" style="display: none;">
+          <input  name="file" type="file" style="display: none;" accept = ".pdf" id="fileCont"  data-header="">
+        </form>
       </div>
       <div class="step_Info">
         <div class="step_InfoSingle">
@@ -133,41 +136,7 @@
     </div>
   </div>
 </div>
-<script>
-   //初始化LayUI组件
-   initLayUi()
-    function initLayUi() {
-        layui.use(['form', 'laydate'], function(){
-            var laydate = layui.laydate;
-            var form = layui.form;
-            //常规用法
-            laydate.render({
-                elem: '#test1',
-                theme: '#2F53B1'
-            });
-            //监听指定开关
-            form.on('switch(switchEncrypt)', function(data){
-                layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'));
-            });
-        });
-    }
-    //打开弹窗相关事件
-    fadeEvt()
-    function fadeEvt() {
-        //    打开弹窗
-        $('.step_Add').on('click',function () {
-            $('#add_Link').stop(true).fadeIn(150);
-        })
-        //    关闭弹窗
-        $('.fade_Close').on('click',function () {
-            $(this).parents('.fade_Box').stop(true).fadeOut(150);
-        })
-        //    移除已添加列表
-        $('.step_User_List_Done i').on('click',function () {
-            $(this).parent('li').remove();
-        })
-    }
-</script>
+<script src="/static/js/sign/step1.js"></script>
 
 
 <%include ../../layout/nullfooter.ejs%>

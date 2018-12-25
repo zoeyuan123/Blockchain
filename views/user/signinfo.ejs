@@ -18,25 +18,36 @@
       <img src="/static/img/model/add.png" alt="">
       <span>在线添加签章</span>
     </div>
-    <div class="sign_file">
+    <div class="sign_file" id="openLocal">
       <img src="/static/img/model/add.png" alt="">
       <span>从本地添加签章</span>
     </div>
   </div>
 </div>
-<div class="sign_Fade">
+<div class="sign_Fade" id="localFade">
   <div class="sign_Get">
-    <button class="file_Btn">选择本地文件</button>
+    <button class="file_Btn" onclick="$('input[id=fileLocal]').click();">选择本地文件</button>
     <p class="file_Name">/asda</p>
+    <div class="img-preview preview-lg"></div>
     <div style="clear: both;"></div>
-    <div class="fileImgBox"></div>
-    <div id="slider" style="transition: none;"></div>
+    <div class="fileImgBox">
+      <div class="img-container" id="img-container">
+        <img src="/static/img/logo.png" id="img-corp">
+      </div>
+    </div>
     <div class="single sign_GetBtnBox">
-      <button>保&nbsp;存</button>
-      <button>取&nbsp;消</button>
+      <button id="saveLocal" data-method="getCroppedCanvas">保&nbsp;存</button>
+      <button id="cancelLocal">取&nbsp;消</button>
     </div>
   </div>
 </div>
+<!---->
+<form  id="formLocal" style="display: none;" method="post">
+  <input  name="file" type="file" style="display: none;" accept = "image/*" id="fileLocal"  data-header="">
+</form>
+<form  id="base64Post" style="display: none;"  action="/uploadBase" method="post">
+  <input  name="base64" type="hidden" style="display: none;" accept = "image/*" id="base64"  data-header="">
+</form>
 
 <script>
 

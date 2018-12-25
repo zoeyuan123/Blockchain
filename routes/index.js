@@ -18,6 +18,7 @@ router.get("/wasm", index.wasm);//wasm
 // router.post('/wasmKey',index.wasmKey);
 //签名demo
 router.get("/signDemo", index.signDemo);
+router.get("/uploadDemo", index.uploadDemo);
 //异常
 router.get("/404", index.i404);//404
 router.get("/403", index.i403);//403
@@ -156,6 +157,15 @@ router.post('/contractInitiate',index.contractInitiate);
 router.post('/contractInfo',index.contractInfo);
 /***********************主页和合同管理弹窗消息接口********End*****************/
 
-
+/***********************文件上传********End*****************/
+var mutipart= require('connect-multiparty');
+var mutipartMiddeware = mutipart();
+var file = require('../controllers/file')
+//查询合同详细信息
+router.post('/upload1',mutipartMiddeware,file.upload1);
+//上传用户信息图片
+router.post('/upload2',mutipartMiddeware,file.upload2);
+//上传合同PDF解析成jpg图片
+router.post('/upload3',mutipartMiddeware,file.upload3);
 
 module.exports = router;

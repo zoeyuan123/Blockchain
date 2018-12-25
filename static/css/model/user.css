@@ -62,12 +62,12 @@
 .sign_file img { color: #BBBBBB;font-size: 40px;display: block;width: 40px; margin: 10px auto;text-align: center;}
 .sign_file span{font-size: 16px;color: #8D8D8D;text-align: center;display: block;width: 100%;}
 
-.sign_Fade,.link_Fade{display: none; position: fixed;width: 100%;height: 100%;background: rgba(0,0,0,0.5);top: 0;left: 0;z-index: 99999;}
-.sign_Get{width: 380px;padding:30px; height:460px;box-sizing: border-box;border-radius: 10px;box-shadow: 0 0 20px #333; position: absolute;top: 0;right: 0;left: 0;bottom: 0;margin: auto;background: white;}
+.sign_Fade,.link_Fade{ position: fixed;width: 100%;height: 100%;background: rgba(0,0,0,0.5);top: 0;left: 0;z-index: 99999;}
+.sign_Get{width: 600px;padding:30px; height:460px;box-sizing: border-box;border-radius: 10px;box-shadow: 0 0 20px #333; position: absolute;top: 0;right: 0;left: 0;bottom: 0;margin: auto;background: white;}
 .file_Btn{float: left;width:130px;height: 35px;cursor: pointer; line-height: 35px; border-radius: 5px;background: #2F53B1;color: white;text-align: center;font-size: 16px;}
 .file_Btn:hover{background:#253F85; }
 .file_Name{float: left;width:145px;height: 35px;line-height: 35px; margin-left: 10px;font-size: 16px; border: 1px solid #212121;background:white;color: #333;box-sizing: border-box;padding-left: 15px; }
-.fileImgBox{width: 250px;height: 250px;background: #E6E6E6;margin: 20px auto;}
+.fileImgBox{width: 100%;height: 250px;background: #E6E6E6;margin: 20px auto;}
 .sign_GetBtnBox{margin-top: 20px;padding: 0 15px;}
 
 .sign_GetBtnBox button{float: left; width:120px;height: 35px;display: inline; cursor: pointer; line-height: 35px; border-radius: 5px;background: #2F53B1;color: white;text-align: center;font-size: 16px;}
@@ -89,7 +89,7 @@
 .serch_List .serch_top{background:#2F53B1!important;border: 0; height: 33px;line-height: 33px;}
 .serch_List .serch_top span{color: white;font-size:16px;font-weight: bold;height: 33px;line-height: 33px;}
 .serch_List li:nth-child(2n) {background: #E6E6E6;border-bottom: 1px solid #395191;border-top: 1px solid #395191;}
-.serch_List li span{font-size: 16px;text-align: center;float: left;height: 50px;line-height: 50px; overflow: hidden;}
+.serch_List li span{font-size: 16px;text-align: center;float: left;height: 50px;line-height: 50px; white-space: nowrap;  overflow: hidden;  text-overflow: ellipsis;}
 .serch_List li input{font-size: 16px;text-align: center;float: left;height: 50px;line-height: 50px; overflow: hidden;border: 0;background: none;outline: none;}
 .serch_List li span:nth-child(1){width: 15%;}
 .serch_List li span:nth-child(2){width: 20%;}
@@ -109,5 +109,24 @@
 .link_Add_Btn{float: left; width:100%;margin-top: 20px; height:  35px;display: inline; cursor: pointer; line-height:  35px; border-radius: 5px;background: #2F53B1;color: white;text-align: center;font-size: 15px;}
 .link_Add_Btn:hover{background:#253F85; }
 .link_Close{width: 30px;position: absolute;right: 20px;top: 20px;cursor: pointer;}
+
+
+
+.img-container,
+.img-preview {
+    background-color: #f7f7f7;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.img-container img{    transition: none;}
+
+.preview-lg {
+    width: 35px;
+    height: 35px;
+    float: left;;
+    margin-left: 20px;
+}
 
 

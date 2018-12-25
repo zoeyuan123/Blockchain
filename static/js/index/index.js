@@ -18,6 +18,7 @@ $(function () {
                     $('#loginMain').css('display','block');
                 } else {
                     messageUnread();
+                    contractCount()
                     $('#loginMain').css('display','none');
                 }
             })
@@ -79,6 +80,8 @@ $(function () {
         echo.ajax.post(Url,SubData,function (res) {
             echo.ajax.callback(res,function () {
                 layer.msg('登录成功');
+                messageUnread();
+                contractCount()
                 $('#loginMain').stop(true).fadeOut(200);
             })
         })
@@ -89,8 +92,16 @@ $(function () {
         echo.ajax.post(Url,null,function (res) {
             echo.ajax.callback(res,function () {
                 console.log(res)
+                redMsg(res.data)
             })
         })
+    }
+    //小红点确认
+    function redMsg(data) {
+        if(!data) {return}
+        if(!data.list) {return}
+        if(data.length == 0) {return}
+        $("#remindIco").fadeIn(150);
     }
     // 修改消息为已读
     function messageUpdateRead(id) {
@@ -109,9 +120,22 @@ $(function () {
         echo.ajax.post(Url,null,function (res) {
             echo.ajax.callback(res,function () {
                 console.log(res)
+                renderCount(res.data)
             })
         })
     }
+    //加载首页统计
+    function renderCount(data) {
+        $('#dataList li').addClass('can_See');
+        $.each($('#dataList li'),function (i,obj) {
+            $('#dataList li').eq(i).find('img').attr('src','/static/img/layout/'+(i+1)+'1.png')
+        })
+        $("#waitmine").html(data.waitmine);
+        $("#expire").html(data.expire);
+        $("#waitother").html(data.waitother);
+    }
+
+
 
     // 查询我发起的合同信息
     function contractInitiate(contractNo) {
@@ -125,6 +149,7 @@ $(function () {
         })
     }
     // 查询合同详细信息
+    // contractInfo(1)
     function contractInfo(id) {
         var Url = '/contractInfo';
         var SubData = {}
@@ -132,7 +157,7 @@ $(function () {
         echo.ajax.post(Url,SubData,function (res) {
             echo.ajax.callback(res,function () {
                 console.log(res)
-                layer.msg('短信已发送');
+
             })
         })
     }

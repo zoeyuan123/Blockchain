@@ -139,5 +139,41 @@ $(function () {
             });
         })
     }
+    //上传
+    function uploadLocalFile(formDom,fileDom,callback) {
+        var Url = "/upload2";
+        uploadEvt(Url,formDom,fileDom,function (data) {
+            callback(data);
+        })
+    }
+    //自动上传
+    selfUpload()
+    function selfUpload() {
+        $("#fileUser").on('change',function () {
+            var formDom = '#fileUserForm';
+            var fileDom = '#fileUser';
+            uploadLocalFile(formDom,fileDom,function (data) {
+                $("#memberImg").val(data.data.urls[0])
+                $("#memberImgIco").attr('src',data.data.urls[0])
+            });
+        })
+        $("#fileidCardFront").on('change',function () {
+            var formDom = '#fileidCardFrontForm';
+            var fileDom = '#fileidCardFront';
+            uploadLocalFile(formDom,fileDom,function (data) {
+                $("#idCardFrontImg").val(data.data.urls[0])
+                $("#idCardFrontImgIco").attr('src',data.data.urls[0])
+
+            });
+        })
+        $("#fileidCardBack").on('change',function () {
+            var formDom = '#fileidCardBackForm';
+            var fileDom = '#fileidCardBack';
+            uploadLocalFile(formDom,fileDom,function (data) {
+                $("#idCardBackImg").val(data.data.urls[0])
+                $("#idCardBackImgIco").attr('src',data.data.urls[0])
+            });
+        })
+    }
 })
 

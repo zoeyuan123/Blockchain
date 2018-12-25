@@ -225,10 +225,11 @@ $(function () {
             for(var i=0;i<data.length;i++) {
                 var this_Data = data[i];
                 Html += '<li>';
-                Html += '<span class="to_Agreeinfo" data-id="'+this_Data.id+'">'+this_Data.contract+'</span>';
+                Html +='<a href="/agreeinfo?id='+this_Data.id+'">'+this_Data.contract+'</a>'
+                // Html += '<span class="to_Agreeinf" data-id="'+this_Data.id+'">'+this_Data.contract+'</span>';
                 Html += '<span>'+this_Data.signin+'</span>';
                 Html += '<span>'+this_Data.startTime+'</span>';
-                Html += '<span>'+this_Data.doneTime+'</span>';
+                Html += '<span>'+this_Data.endTime+'</span>';
                 Html += '</li>';
             }
         }

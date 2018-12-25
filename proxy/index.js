@@ -35,3 +35,21 @@ module.exports.contractInfo = function (data,req) {
     return common.postMethod(reqUrl,data,req);
 };
 
+// 上传合同图片
+module.exports.upload1 = function (data,req) {
+    var url = config.javaServerUrl;
+    var reqUrl=url+'/upload/1';
+    return common.postFileMethod(reqUrl,data,req);
+};
+// 上传用户信息图片
+module.exports.upload2 = function (data,req) {
+    var url = config.javaServerUrl;
+    var reqUrl=url+'/upload/2';
+    return common.postFileMethod(reqUrl,data,req);
+};
+// 上传合同PDF解析成jpg图片
+module.exports.upload3 = function (data,req) {
+    var url = config.javaServerUrl;
+    var reqUrl=url+'/upload/3';
+    return common.postFileMethod(reqUrl,data,req);
+};
