@@ -299,7 +299,7 @@ $(function () {
                 })
             })
         }
-    //已拒绝头部html
+    //草稿箱html
     function creDraftTopHtml() {
         var Html = '';
         Html += '<li class="top">';
@@ -310,7 +310,7 @@ $(function () {
         Html += '</li>';
         return Html;
     }
-    //已拒绝列表Html
+    //草稿箱列表Html
     function creDraftHtml(data) {
         var Html = '<ul class="single sign_Draft">'
         Html += creDraftTopHtml();
@@ -366,6 +366,4 @@ $(function () {
             })
         })
     }
-
-
 })
