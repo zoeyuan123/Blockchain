@@ -332,3 +332,10 @@ function urlSearch() {
     }
 }
 var getUrl = new urlSearch(); //实例化
+
+
+
+//鉴别数据是否存在
+function isExistData(data) {
+    return data ? data:' ';
+}

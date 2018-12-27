@@ -181,6 +181,8 @@ router.post('/contractSigningVerifyCode',sign.contractSigningVerifyCode);
 router.post('/contractInitiateSigning',sign.contractInitiateSigning);
 // 同意或拒绝签署
 router.post('/contractSigning',sign.contractSigning);
+//同意或拒绝签署列表
+router.post('/contractSimpleInfo',sign.contractSimpleInfo);
 /***********************主动合同签署********End*****************/
 
 

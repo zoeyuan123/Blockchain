@@ -21,10 +21,10 @@ $(function () {
         $("#contractName").html(isExistData(data.contractName))
         $("#contractNo").html(isExistData(data.contractNo))
         $("#startTime").html(isExistData(data.startTime))
-        $("#completeTime").html(isExistData(data.completeTime))
+        $("#signTime").html(isExistData(data.signTime))
         $("#initiatorName").html(isExistData(data.initiatorName))
         $("#initiatorPhone").html(isExistData(data.initiatorPhone))
-        $("#contractUrl").attr('src',isExistData(data.contractUrl));
+        $("#contractUrl").attr('href',isExistData(data.contractUrl))
         $("#contractStartBlockUrl").attr('href',isExistData(data.contractStartBlockUrl)).html(isExistData(data.contractStartBlockUrl));
         $("#contractEndBlockUrl").attr('href',isExistData(data.contractEndBlockUrl)).html(isExistData(data.contractEndBlockUrl));
         proofList(data.proofList);
@@ -45,8 +45,8 @@ $(function () {
             for(var i=0;i<data.length;i++) {
                 var this_Data = data[i];
                 Html += '<li class="single" data-this_Data="'+JSON.stringify(this_Data)+'">';
-                Html += '<span title="'+this_Data.fileHash+'">'+this_Data.fileHash+'</span>';
-                Html += '<span title="'+this_Data.status+'">'+this_Data.status+'</span>';
+                Html += '<span title="'+this_Data.fileHash+'">'+isExistData(this_Data.fileHash)+'</span>';
+                Html += '<span title="'+this_Data.status+'">'+isExistData(this_Data.status)+'</span>';
                 Html += '</li>';
             }
         }

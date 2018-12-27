@@ -35,6 +35,12 @@ module.exports.contractSigning = function (data,req) {
     var reqUrl=url+'/contract/signing';
     return common.postMethod(reqUrl,data,req);
 };
+// 同意或拒绝签署列表
+module.exports.contractSimpleInfo = function (data,req) {
+    var url = config.javaServerUrl;
+    var reqUrl=url+'/contract/simpleInfo';
+    return common.postMethod(reqUrl,data,req);
+};
 
 
 

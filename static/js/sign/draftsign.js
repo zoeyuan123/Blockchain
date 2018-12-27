@@ -28,8 +28,8 @@ $(function () {
             for(var i=0;i<data.length;i++) {
                 var this_Data = data[i];
                 Html += '<li class="single" data-this_Data="'+this_Data+'">';
-                Html += '<span>'+this_Data.name+'</span>';
-                Html += '<span>'+this_Data.phone+'</span>';
+                Html += '<span>'+isExistData(this_Data.name)+'</span>';
+                Html += '<span>'+isExistData(this_Data.phone)+'</span>';
                 Html += '<span>--</span>';
                 Html += '</li>';
             }
@@ -43,5 +43,12 @@ $(function () {
         var getMonth =  myDate.getMonth()+1;
         var getDate =  myDate.getDate();;
         return getFullYear+'-'+getMonth + '-'+getDate;
+    }
+    gotSigniInfo()
+    function gotSigniInfo() {
+        $("#gotSigniInfo").on('click',function () {
+            var id = getUrl.id;
+            window.location.href = '/signinfo?id='+id
+        })
     }
 })

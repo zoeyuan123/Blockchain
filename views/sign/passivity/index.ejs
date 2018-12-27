@@ -10,51 +10,47 @@
           <p class="intro_Txt">Step1 合同信息：</p>
           <div class="intro_Signle">
             <span>合同名称：</span>
-            <span>XXX合同</span>
+            <span id="contractName"></span>
           </div>
           <div class="intro_Signle">
             <span>截止日期：</span>
-            <span>2018-12-12</span>
+            <span id="endTime"></span>
           </div>
           <div class="intro_Signle">
             <span>备注：</span>
-            <span class="bacDC">XXX合同</span>
+            <span class="bacDC" id="remark"></span>
           </div>
         </div>
         <div class="sign_Intro">
           <p class="intro_Txt">Step2 签署方：</p>
-          <div class="intro_Signle">
-            <span>1.张三</span>
-            <span>Tel：18765739310</span>
-          </div>
-          <div class="intro_Signle">
-            <span>1.Echonessy</span>
-            <span>Tel：18765739310</span>
-          </div>
+          <ul class="single intro_Signle" id="intro_Signle" ></ul>
         </div>
         <div class="sign_Intro">
           <p class="intro_Txt">Step3 提交签名：</p>
           <div class="sign_Img" id="sign_Img">
             <div class="drag_Box">
-              <img src="/static/img/logo.png"  class="" alt="">
+              <img src="/static/img/logo.png" id="my_SignImg"  class="" alt="">
             </div>
           </div>
           <span class="intro_Drag">（左键点击拖动至右侧合适位置）</span>
-          <button class="change_Btn">更改签署</button>
+          <button class="change_Btn" id="change_Btn">更改签章</button>
         </div>
       </div>
       <div class="sign_Right">
         <div class="MainBox" id="MainBox">
           <div class="DragBox" id="DragBox"></div>
-          <img id="bac" src="/static/img/demo/signDemo/bag.jpg" alt="">
+          <img src="" id="showBase64" alt="">
+          <div class="ImgBoxMain" id="ImgBoxMain"></div>
         </div>
         <div class="sign_Opr single">
-          <button><a href="/agreesign">同意签署</a></button>
-          <button><a href="/refusesign">拒绝签署</a></button>
+          <button id="contractSigning_Ok">同意签署</button>
+          <button id="contractSigning_No">拒绝签署</button>
         </div>
       </div>
     </div>
   </div>
 </div>
-<script src="/static/js/sign/index.js"></script>
+<%include ../layout/addsignature.ejs%>
+<%include ../layout/identity.ejs%>
+<script src="/static/js/sign/passivity.js"></script>
 <%include ../../layout/nullfooter.ejs%>

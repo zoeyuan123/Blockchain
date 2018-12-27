@@ -121,9 +121,9 @@ exports.upload4 = function (req, res) {
             const meta = {
                 'cookie':ServerCookie,
             };
-            form.append('file', file)
+            form.append('file', file);
             console.log(form.getHeaders(meta))
-            fetch(config.javaServerUrl+'/upload/3', {
+            fetch(config.javaServerUrl+'/upload/4', {
                 method: "POST",
                 headers: form.getHeaders(meta),
                 body: form

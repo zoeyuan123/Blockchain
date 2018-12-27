@@ -49,4 +49,12 @@ exports.contractSigning = function (req, res) {
     }).catch(function (e) {
         return responseHelper.serverExceptionTip(res, e.message);
     });
+};//同意或拒绝签署列表
+exports.contractSimpleInfo = function (req, res) {
+    let reqData = req.body;
+    sign.contractSimpleInfo(reqData ,req).then(function (data) {
+        return res.json(data);
+    }).catch(function (e) {
+        return responseHelper.serverExceptionTip(res, e.message);
+    });
 };

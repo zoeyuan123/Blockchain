@@ -6,7 +6,7 @@
     <div class="single info_IntroBox">
       <div class="info_Intro">
         <p><span>合同名称：</span><span id="contractName"></span></p>
-        <p class="info_Look">（点击预览）</p>
+        <a href="" class="info_Look" target="_blank" id="contractUrl">（点击预览）</a>
       </div>
       <div class="info_Intro">
         <span>合同状态：</span>
@@ -22,7 +22,7 @@
           <span id="startTime"></span>
         </p>
         <span>签署时间：</span>
-        <span id="completeTime"></span>
+        <span id="signTime"></span>
       </div>
       <div class="info_Intro">
         <p class="w270">
@@ -51,9 +51,7 @@
       <button><a href="/sign">返回主页</a></button>
     </div>
   </div>
-  <div class="showPreConImg">
-    <img src="" id="contractUrl" alt="">
-  </div>
+
 </div>
 <script src="/static/js/sign/signInfo.js"></script>
 <%include ../../layout/nullfooter.ejs%>
