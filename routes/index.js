@@ -167,7 +167,8 @@ router.post('/upload1',mutipartMiddeware,file.upload1);
 router.post('/upload2',mutipartMiddeware,file.upload2);
 //上传合同PDF解析成jpg图片
 router.post('/upload3',mutipartMiddeware,file.upload3);
-
+//上传合同txt解析成jpg图片
+router.post('/upload4',mutipartMiddeware,file.upload4);
 const sign = require('../controllers/sign');
 /***********************主动合同签署********Start*****************/
 // 增加草稿合同

@@ -78,6 +78,7 @@ $(function () {
         SubData.phone = phone;
         echo.ajax.post(Url,SubData,function (res) {
             echo.ajax.callback(res,function () {
+                alert(res.data.code);
                 layer.msg('短信已发送');
             })
         })

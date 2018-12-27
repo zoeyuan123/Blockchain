@@ -257,7 +257,7 @@ $(function () {
         SubData.contractUrl = url;
         echo.ajax.post(Url,SubData,function (res) {
             echo.ajax.callback(res,function () {
-                window.location.href = '/draftsign'
+                window.location.href = '/draftsign?id='+res.data.id;
             })
         })
     }
@@ -289,7 +289,7 @@ $(function () {
         SubData.phone = phone;
         echo.ajax.post(Url,SubData,function (res) {
             echo.ajax.callback(res,function () {
-                console.log(res)
+                alert(res.data.code);
                 layer.msg('短信已发送');
             })
         })
@@ -299,9 +299,24 @@ $(function () {
     function signCerBtnEvt() {
         $("#iden_CerBtn").on('click',function () {
             var verifyCode = $("#verifyCode").val();
+            var phone = $("#sendPhone").html();
             if(!verifyCode) {layer.msg('请输入验证码');return}
             create(function (url) {
-                contractInitiateSigning(url,verifyCode);
+                base64ToUrl(url,verifyCode);
+                // contractInitiateSigning(url,verifyCode);
+            })
+        })
+    }
+    //base64上传后获取url
+    function base64ToUrl(url,verifyCode) {
+        var Url = '/upload4';
+        var SubData = {};
+        SubData.phone = $("#sendPhone").html();
+        SubData.url = url;
+        echo.ajax.post(Url,SubData,function (res) {
+            echo.ajax.callback(res,function () {
+                var this_Url = res.data.contractUrl;
+                contractInitiateSigning(url,verifyCode)
             })
         })
     }
@@ -326,11 +341,10 @@ $(function () {
         SubData.verifyCode = verifyCode;
         echo.ajax.post(Url,SubData,function (res) {
             echo.ajax.callback(res,function () {
-                window.location.href = '/initiatesign'
+                window.location.href = '/initiatesign?id='+ res.data.id;
             })
         })
     }
-
 })
 
 

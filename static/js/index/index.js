@@ -67,6 +67,7 @@ $(function () {
         echo.ajax.post(Url,SubData,function (res) {
             echo.ajax.callback(res,function () {
                 console.log(res)
+                alert(res.data.code);
                 layer.msg('短信已发送');
             })
         })
