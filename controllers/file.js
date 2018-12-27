@@ -112,11 +112,12 @@ exports.upload4 = function (req, res) {
             }
         }
     }
-    let fileName = './base64/'+req.body.phone+'.txt';
+    var fileName = './base64/'+req.body.phone+'.txt';
+    var str = req.body.url;
     fs.writeFile(fileName, str,(err) => {
         if(!err) {
             const file = fs.createReadStream(fileName)
-            const form = new FormData()
+            const form = new FormData();
             const meta = {
                 'cookie':ServerCookie,
             };

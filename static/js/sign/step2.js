@@ -3,16 +3,12 @@
  */
 
 $(function () {
-    layui.use('layer',function () {});
-    var tishi = layer.open({
-        shadeClose: false,
-        content: '加载合同中...'
-    });
     //渲染拿到的第一步数据
     renderPreData()
     function renderPreData() {
         $('#MainBox').css('overflow-y','hidden');
         var stepInfo = JSON.parse(localStorage.getItem('stepInfo'));
+        echo.box.loader('加载合同中');
         console.log(stepInfo);
         renderContact(stepInfo);
         renderBaseInfo(stepInfo)
@@ -66,7 +62,6 @@ $(function () {
             var bh = $(imgobj).height();
             var signImg=new Image();
             var top = $(imgobj).position().top;
-            console.log(top)
             signImg.crossOrigin = "";
             signImg.src = $(imgobj).attr('src');
             signImg.onload=function(err){
@@ -76,6 +71,7 @@ $(function () {
                     $("#ImgBoxMain").css('display','none');
                     $('#MainBox').css('overflow-y','auto');
                     layer.msg('加载完毕');
+                    echo.box.close();
                     $("#showBase64").attr('src',DataArr[DataArr.length-1])
                 }
             }
@@ -103,6 +99,7 @@ $(function () {
             return deferred.promise();//问题要让onload完成后再return sessionStorage['imgTest']
         }
     }
+    //赋值base64
     function creatBaseImg(data) {
         var Arr = [];
         var i= 0;
@@ -236,6 +233,7 @@ $(function () {
     }
     //    合并后回调
     function funCallBack(src,fun) {
+        console.log(src);
        fun(src);
     }
     //保存草稿
@@ -266,11 +264,11 @@ $(function () {
     function saveDraft() {
         $("#saveDraft").on('click',function () {
             create(function (url) {
+                console.log(url)
                 contractAddDraft(url)
             })
         })
     }
-
     //获取验证码
     getSignCodeEvt()
     function getSignCodeEvt() {
@@ -302,6 +300,7 @@ $(function () {
             var phone = $("#sendPhone").html();
             if(!verifyCode) {layer.msg('请输入验证码');return}
             create(function (url) {
+                console.log(url)
                 base64ToUrl(url,verifyCode);
                 // contractInitiateSigning(url,verifyCode);
             })

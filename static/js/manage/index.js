@@ -78,7 +78,7 @@ $(function () {
             for(var i=0;i<data.length;i++) {
                 var this_Data = data[i];
                 Html += '<li>';
-                Html += '<span data-id="'+this_Data.id+'">'+this_Data.contract+'</span>';
+                Html += '<span data-id="'+this_Data.id+'"><a href="/signinfo?id='+this_Data.id+'">'+this_Data.contract+'</a></span>';
                 Html += '<span>'+this_Data.initiator+'</span>';
                 Html += '<span>'+this_Data.startTime+'</span>';
                 Html += '<span>'+this_Data.endTime+'</span>';
@@ -127,7 +127,7 @@ $(function () {
             for(var i=0;i<data.length;i++) {
                 var this_Data = data[i];
                 Html += '<li>';
-                Html += '<span class="to_Passivesign" data-id="'+this_Data.id+'">'+this_Data.contract+'</span>';
+                Html += '<span data-id="'+this_Data.id+'"><a href="/passivesign?id='+this_Data.id+'">'+this_Data.contract+'</a></span>';
                 Html += '<span>'+this_Data.initiator+'</span>';
                 Html += '<span>'+this_Data.startTime+'</span>';
                 Html += '<span>'+this_Data.endTime+'</span>';
@@ -140,12 +140,8 @@ $(function () {
     //渲染数据
     function renderWaitMineHtml(data) {
         $('#wait_Me').html(creWaitMineHtml(data))
+
     }
-
-
-
-
-
     //获取待对方签Ajax
     getWaitYouAjax()
     function getWaitYouAjax() {
@@ -176,7 +172,7 @@ $(function () {
             for(var i=0;i<data.length;i++) {
                 var this_Data = data[i];
                 Html += '<li>';
-                Html += '<span class="to_Signinfo" data-id="'+this_Data.id+'">'+this_Data.contract+'</span>';
+                Html += '<span data-id="'+this_Data.id+'"><a href="/signinfo?id='+this_Data.id+'">'+this_Data.contract+'</a></span>';
                 Html += '<span>'+this_Data.signinArticle+'</span>';
                 Html += '<span>'+this_Data.startTime+'</span>';
                 Html += '<span>'+this_Data.endTime+'</span>';
@@ -225,7 +221,7 @@ $(function () {
             for(var i=0;i<data.length;i++) {
                 var this_Data = data[i];
                 Html += '<li>';
-                Html +='<a href="/agreeinfo?id='+this_Data.id+'">'+this_Data.contract+'</a>'
+                Html += '<span data-id="'+this_Data.id+'"><a href="/signinfo?id='+this_Data.id+'">'+this_Data.contract+'</a></span>';
                 // Html += '<span class="to_Agreeinf" data-id="'+this_Data.id+'">'+this_Data.contract+'</span>';
                 Html += '<span>'+this_Data.signin+'</span>';
                 Html += '<span>'+this_Data.startTime+'</span>';
@@ -274,7 +270,7 @@ $(function () {
             for(var i=0;i<data.length;i++) {
                 var this_Data = data[i];
                 Html += '<li>';
-                Html += '<span class="to_Refuseinfo" data-id="'+this_Data.id+'">'+this_Data.contract+'</span>';
+                Html += '<span data-id="'+this_Data.id+'"><a href="/signinfo?id='+this_Data.id+'">'+this_Data.contract+'</a></span>';
                 Html += '<span>'+this_Data.initiator+'</span>';
                 Html += '<span>'+this_Data.denied+'</span>';
                 Html += '<span>'+this_Data.startTime+'</span>';
@@ -322,7 +318,7 @@ $(function () {
             for(var i=0;i<data.length;i++) {
                 var this_Data = data[i];
                 Html += '<li>';
-                Html += '<span class="to_Refuseinfo" data-id="'+this_Data.id+'">'+this_Data.contract+'</span>';
+                Html += '<span data-id="'+this_Data.id+'"><a href="/signinfo?id='+this_Data.id+'">'+this_Data.contract+'</a></span>';
                 Html += '<span>'+this_Data.signUser+'</span>';
                 Html += '<span>'+this_Data.lastEditTime+'</span>';
                 Html += '<span><img src="/static/img/model/del.png" data-id="'+this_Data.id+'" class="del_Ico" alt=""></span>';
