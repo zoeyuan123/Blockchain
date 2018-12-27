@@ -8,30 +8,15 @@
     </div>
     <p class="single result_Tit">您的签约请求已发出，请等待对方签署</p>
     <div class="single sign_Name">
-      <span>合同名称：XXX合同</span>
-      <span>截止日期：2018/01/01</span>
+      <span>合同名称：<span id="contactName"></span></span>
+      <span>截止日期：<span id="contactTime"></span></span>
     </div>
-    <ul class="single result_List">
-      <li class="single top">
-        <span>签署人</span>
-        <span>签署人账号</span>
-        <span>签署时间</span>
-      </li>
-      <li class="single">
-        <span>Echonessy</span>
-        <span>1231231231</span>
-        <span>2018/01/01</span>
-      </li>
-      <li class="single">
-        <span>张三</span>
-        <span>324234234</span>
-        <span>2018/01/01</span>
-      </li>
-    </ul>
+    <ul class="single result_List" id="result_List"></ul>
     <div class="single result_Opr">
       <button><a href="/signinfo">合同信息</a></button>
       <button><a href="/sign">返回主页</a></button>
     </div>
   </div>
 </div>
+<script src="/static/js/sign/initiatesign.js"></script>
 <%include ../../layout/nullfooter.ejs%>

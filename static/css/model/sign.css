@@ -17,7 +17,7 @@
 .step_Tip img{height:12px;float: left;margin-top: 1px;margin-right: 2px;}
 .step_List li{float: left;width: 100%;box-sizing: border-box;height:70px;line-height: 70px;font-size: 18px;margin-bottom: 20px;}
 .list_Bor{float: left;width: 570px;height: 70px;border: 1px solid #333;padding: 15px 0;}
-.list_Bor>span{float: left;font-size: 24px;width: 40px;text-align: center;}
+.list_Bor>span{float: left;font-size: 24px;width: 40px;text-align: center;line-height: 40px;}
 .list_Bor>input{float: left;width: 250px;height: 40px;margin-right: 13px; line-height: 40px;background: #E6E6E6; box-sizing: border-box;padding-left: 15px;font-size: 18px;outline: none;border: 0;}
 .step_List li>button{float: left;margin-left: 20px; width: 125px;height: 35px;line-height: 35px;font-size: 16px;color: white;border-radius: 5px;margin-top: 20px; background: #758CCA; box-sizing: border-box;}
 .step_List li>button:hover{background: #6279B6;}
@@ -33,9 +33,9 @@
 .step_UserSearch img{float: left; width: 40px;}
 .step_UserSearch input{background: none;font-size: 16px; outline: none;border: 0;float: left;width: 310px;box-sizing: border-box;}
 .step_User_List{border-top: 1px solid #01237C;;height: 236px;overflow-y: auto;}
-.step_User_List .top{background: #8091BD;color: white;font-weight: bold;}
-.step_User_List li{color: #9E9E9E;font-size: 18px;height: 45px;border-bottom: 1px solid #01237C;line-height: 45px;}
-.step_User_List li span{width: 50%;float: left;text-align: center;}
+.step_User_List .top{background: #8091BD;color: white;font-weight: bold;cursor: default;}
+.step_User_List li{color: #9E9E9E;font-size: 18px;border-bottom: 1px solid #01237C;cursor: pointer;overflow: hidden;}
+.step_User_List li span{width: 50%;float: left;text-align: center;height: 45px;line-height: 45px;}
 .step_UserRight{float: left;padding-top: 80px;width: 265px;box-sizing: border-box;padding-left: 24px;}
 .step_User_List_Done{border-top: 1px solid #01237C;;height: 236px;overflow-y: auto;}
 .step_User_List_Done .top{background: #8091BD;color: white;font-weight: bold;}
@@ -64,7 +64,7 @@
 .sign_Left{float: left;width: 220px;box-sizing: border-box;border-right:1px solid #223F8D;padding-right: 10px;padding-bottom: 20px;}
 .bacDC{background: #DCDCDC;color: #333;}
 .intro_Txt{float: left;width: 100%;height: 50px;line-height: 50px;margin-top: 10px;text-align: left;font-size: 18px;color: #4463B7;font-weight: bold;}
-.intro_Signle{height: 35px;line-height: 35px;float: left;width: 100%;}
+.intro_Signle li{height: 35px;line-height: 35px;float: left;width: 100%;}
 .intro_Signle span{font-size: 17px;color: #333;float: left;width: 50%;white-space: nowrap;  overflow: hidden;  text-overflow: ellipsis;}
 .sign_Img{width: 160px;height: 160px;position: relative; margin-left: 28px;float: left;border: dashed 2px #2F53B1;box-sizing: border-box;padding: 15px;}
 .sign_Img img{width: 100%;}
@@ -76,6 +76,8 @@
 .sign_Right{float: right;width: 660px;}
 .MainBox{width: 660px;border: 1px solid #ccc;border-radius: 5px; position: relative;margin-top: 20px; height: 500px;overflow-y: scroll; text-align: center;;float: left;}
 .MainBox>img{width: 100%;}
+.ImgBoxMain{float: left;width: 100%;box-sizing: border-box;position: relative;}
+.ImgBoxMain>img{width: 100%;}
 .MainBox .drag_Box{border: 1px dashed #ccc;}
 .DragBox{width: 100%;position: absolute;top: 0;left: 0;z-index: 2;height: 100%;}
 .Corner{position: absolute;width: 10px;height: 10px;bottom: 0;right: 0; background: #ccc;}
@@ -123,4 +125,22 @@
 .back_SignBtn button:hover{background: #6279B6;}
 
 
+
+
+.img-container,
+.img-preview {
+    background-color: #f7f7f7;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.img-container img{    transition: none;}
+
+.preview-lg {
+    width: 35px;
+    height: 35px;
+    float: left;;
+    margin-left: 20px;
+}
 

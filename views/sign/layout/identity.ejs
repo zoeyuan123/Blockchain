@@ -4,17 +4,10 @@
         <img src="/static/img/layout/close.png" alt="" class="fade_Close">
         <p class="single iden_Tit">身份验证</p>
         <div class="single iden_Con">
-            <p class="single iden_ConTxt">接收手机号：123***456</p>
+            <p class="single iden_ConTxt" >接收手机号：<span id="sendPhone"></span></p>
             <div class="single iden_Line">
-                <input type="text">
-                <button>获取验证码</button>
-            </div>
-        </div>
-        <div class="single iden_Con">
-            <p class="single iden_ConTxt">生成cipher text</p>
-            <div class="single iden_Line">
-                <input type="text">
-                <button>私钥导入</button>
+                <input type="text" id="verifyCode" class="input2" placeholder="请输入验证码">
+                <button class="sendTxt" id="getVerifyCode">发送验证码</button>
             </div>
         </div>
         <div class="single iden_CerBtn">
@@ -22,17 +15,5 @@
         </div>
     </div>
 </div>
-
-
-<script>
-    iden_Fade_Evt()
-    function iden_Fade_Evt() {
-        $('.fade_Close').on('click',function () {
-            $(this).parents('.fade_Box').stop(true).fadeOut(150);
-        })
-        $('#iden_CerBtn').on('click',function () {
-            window.location.href = "/initiatesign";
-        })
-    }
-</script>
+<script src="/static/js/sign/identity.js"></script>
 

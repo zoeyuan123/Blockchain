@@ -36,7 +36,7 @@ app.use(logger.appLog());
 app.use(bodyParser.json());
 
 //创建 application/x-www-form-urlencoded 解析
-app.use(bodyParser.urlencoded({extended: true,limit:'5mb'}));
+app.use(bodyParser.urlencoded({extended: true,limit:'500mb'}));
 
 // // //Cookie 会话保持
 // app.use(require('cookie-parser')(config.session_secret));

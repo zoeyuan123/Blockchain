@@ -168,4 +168,20 @@ router.post('/upload2',mutipartMiddeware,file.upload2);
 //上传合同PDF解析成jpg图片
 router.post('/upload3',mutipartMiddeware,file.upload3);
 
+const sign = require('../controllers/sign');
+/***********************主动合同签署********Start*****************/
+// 增加草稿合同
+router.post('/contractAddDraft',sign.contractAddDraft);
+// 修改草稿合同,只能修改合同文件地址
+router.post('/contractUpdateDraft',sign.contractUpdateDraft);
+// 获取合同签约短信验证码
+router.post('/contractSigningVerifyCode',sign.contractSigningVerifyCode);
+// 发起签署
+router.post('/contractInitiateSigning',sign.contractInitiateSigning);
+// 同意或拒绝签署
+router.post('/contractSigning',sign.contractSigning);
+/***********************主动合同签署********End*****************/
+
+
+
 module.exports = router;

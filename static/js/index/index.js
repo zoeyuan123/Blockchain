@@ -79,6 +79,7 @@ $(function () {
         SubData.verifyCode = verifyCode;
         echo.ajax.post(Url,SubData,function (res) {
             echo.ajax.callback(res,function () {
+                window.localStorage.setItem('c_pid',phone);
                 layer.msg('登录成功');
                 messageUnread();
                 contractCount()
@@ -157,7 +158,6 @@ $(function () {
         echo.ajax.post(Url,SubData,function (res) {
             echo.ajax.callback(res,function () {
                 console.log(res)
-
             })
         })
     }

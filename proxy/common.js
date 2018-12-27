@@ -77,11 +77,6 @@ module.exports.postMethod = function (source_url, json,req) {
                 try {
                     obj = JSON.parse(res.text);
                     resolve(obj);
-                    // if (res.ok && (obj.result=="success")) {
-                    //     resolve(obj);
-                    // } else {
-                    //     reject(new Error(obj.msg || '', obj.reqCode));
-                    // }
                 } catch (e) {
                     reject(new Error(res.text || '服务端异常！'));
                 }

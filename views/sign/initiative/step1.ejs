@@ -14,23 +14,23 @@
       <div class="step_Info">
         <div class="step_InfoSingle">
           <span class="step_Txt">设置合同名称：</span>
-          <div class="step_InBox"><input type="text"></div>
+          <div class="step_InBox"><input type="text" id="contactName"></div>
         </div>
         <div class="step_InfoSingle">
           <span class="step_Txt">设置截止日期：</span>
           <div class="step_InBox">
-            <input type="text" id="test1" class="layui-input" >
+            <input type="text" id="contactTime" class="layui-input" >
             <img class="calendar" src="/static/img/model/calendar.png" alt="">
           </div>
         </div>
         <div class="step_InfoSingle">
           <span class="step_Txt">备注信息：</span>
-          <div class="step_InBox"><input type="text"></div>
+          <div class="step_InBox"><input type="text" id="contactRemark"></div>
         </div>
         <div class="step_InfoSingle">
           <span class="step_Txt">是否发起绝密合同：</span>
           <form class="layui-form">
-            <input type="checkbox" id="SwitchHeader" name="switch" lay-filter="switchEncrypt" lay-text="ON|OFF" lay-skin="switch">
+            <input type="checkbox" id="contactSecret" data-checked="false" name="switch" lay-filter="contactSecret" lay-text="ON|OFF" lay-skin="switch">
           </form>
           <p class="step_Tip">
             <img src="/static/img/model/tip.png" alt="">
@@ -42,27 +42,10 @@
     <p class="single step_Tit">Step2 选择签署方</p>
     <div class="single step_Box" style="padding-top: 0;">
       <img src="/static/img/model/user.png" style="float: left;margin: 18px 0;" alt="">
-      <ul class="single step_List">
-        <li>
-          <div class="list_Bor">
-            <span>1</span>
-            <input type="text" value="张三">
-            <input type="text" value="12312312123123">
-          </div>
-          <button>撤&nbsp;&nbsp;销</button>
-        </li>
-        <li>
-          <div class="list_Bor">
-            <span>2</span>
-            <input type="text" placeholder="姓名、机构号">
-            <input type="text" placeholder="账号(手机号)">
-          </div>
-          <button>撤&nbsp;&nbsp;销</button>
-        </li>
-      </ul>
+      <ul class="single step_List" id="sign_User"></ul>
       <div class="step_Add">+添加签署方</div>
       <div class="single step_Next">
-        <button><a href="/signnext">下一步</a></button>
+        <button id="toSignnext">下一步</button>
       </div>
     </div>
   </div>
@@ -73,65 +56,19 @@
       <div class="step_UserLeft">
         <div class="step_UserSearch">
           <img src="/static/img/model/serch.png" alt="">
-          <input type="text">
+          <input type="text" id="search">
         </div>
-        <ul class="single step_User_List">
-          <li class="top">
-            <span>姓名、企业名</span>
-            <span>账号（手机号）</span>
-          </li>
-          <li>
-            <span>Echonessy</span>
-            <span>18888888888</span>
-          </li>
-          <li>
-            <span>张三</span>
-            <span>18888888888</span>
-          </li>
-          <li>
-            <span></span>
-            <span></span>
-          </li>
-          <li>
-            <span></span>
-            <span></span>
-          </li>
-          <li>
-            <span></span>
-            <span></span>
-          </li>
-        </ul>
+        <ul class="single step_User_List" id="serch_List"></ul>
       </div>
       <div class="step_UserRight">
-        <ul class="single step_User_List_Done">
+        <ul class="single step_User_List_Done" id="step_User_Done">
           <li class="top">
             <span>已添加列表</span>
           </li>
-          <li>
-            <span>张三</span>
-            <i class="layui-icon layui-icon-close"></i>
-          </li>
-          <li>
-            <span>张三</span>
-            <i class="layui-icon layui-icon-close"></i>
-          </li>
-          <li>
-            <span>张三</span>
-            <i class="layui-icon layui-icon-close"></i>
-          </li>
-          <li>
-            <span>张三</span>
-            <i class="layui-icon layui-icon-close"></i>
-          </li>
-          <li>
-            <span>张三</span>
-            <i class="layui-icon layui-icon-close"></i>
-          </li>
-
         </ul>
       </div>
       <div class="single step_User_CerBtn">
-        <button>确认</button>
+        <button id="step_User_CerBtn">确认</button>
       </div>
     </div>
   </div>

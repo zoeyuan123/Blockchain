@@ -32,6 +32,7 @@
     "flexbuffer": "0.0.6",
     "form-data": "^2.3.3",
     "fs": "0.0.1-security",
+    "http": "0.0.0",
     "ioredis": "^2.5.0",
     "loader": "~0.1.4",
     "lodash": "~3.6.0",

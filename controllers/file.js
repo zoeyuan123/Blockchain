@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const fetch = require('node-fetch');
 const FormData = require('form-data');
+const http = require('http');
 //查询合同详细信息
 exports.upload1 = function (req, res) {
     const { path: filePath, originalFilename } = req.files.file
@@ -95,11 +96,11 @@ exports.upload3 = function (req, res) {
                 response.json()
             ).then(function (json) {
                 console.log('----------------------responseData--------------------------')
-                console.log(json)
-
+                console.log(json);
                 console.log('----------------------responseData--------------------------')
                 return res.json(json)
             });
         }
     })
 };
+

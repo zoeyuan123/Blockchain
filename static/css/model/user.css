@@ -62,7 +62,7 @@
 .sign_file img { color: #BBBBBB;font-size: 40px;display: block;width: 40px; margin: 10px auto;text-align: center;}
 .sign_file span{font-size: 16px;color: #8D8D8D;text-align: center;display: block;width: 100%;}
 
-.sign_Fade,.link_Fade{ position: fixed;width: 100%;height: 100%;background: rgba(0,0,0,0.5);top: 0;left: 0;z-index: 99999;}
+.sign_Fade,.link_Fade{display: none; position: fixed;width: 100%;height: 100%;background: rgba(0,0,0,0.5);top: 0;left: 0;z-index: 99999;}
 .sign_Get{width: 600px;padding:30px; height:460px;box-sizing: border-box;border-radius: 10px;box-shadow: 0 0 20px #333; position: absolute;top: 0;right: 0;left: 0;bottom: 0;margin: auto;background: white;}
 .file_Btn{float: left;width:130px;height: 35px;cursor: pointer; line-height: 35px; border-radius: 5px;background: #2F53B1;color: white;text-align: center;font-size: 16px;}
 .file_Btn:hover{background:#253F85; }

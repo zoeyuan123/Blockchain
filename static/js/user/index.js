@@ -81,18 +81,17 @@ $(function () {
     }
     // 渲染签章
     function renderInfoImg(data) {
+        console.log(data)
         if(!data) {return}
         var Html = '';
         for(var i=0; i<data.length;i++) {
-            Html += '<li><img src="data:image/png;base64,'+data[i].url+'" alt=""></li>';
+            var this_Data = data[i];
+            Html += '<li><img data-addTime="'+this_Data.addTime+'" data-id="'+this_Data.id+'" data-mid="'+this_Data.mid+'" src="'+this_Data.url+'" alt=""></li>';
         }
-        // $("#user_SignList").html(Html).attr({
-        //     "data-id": data.id,
-        //     "data-mid": data.mid,
-        //     "data-addTime": data.addTime
-        // });
+        $("#user_SignList").html(Html);
     }
     // 查询联系人
+    listSearch()
     function listSearch() {
         var Url = '/listSearch';
         var SubData = {}
@@ -121,8 +120,16 @@ $(function () {
                 Html += '<li>';
                 Html += '<span>'+this_Data.name+'</span>';
                 Html += '<span title="'+this_Data.publicKeys+'">'+this_Data.publicKeys+'</span>';
-                Html += '<span>'+this_Data.company+'</span>';
-                Html += '<span>'+this_Data.position+'</span>';
+                if(this_Data.company) {
+                    Html += '<span>'+this_Data.company+'</span>';
+                } else {
+                    Html += '<span>暂无</span>';
+                }
+                if(this_Data.position) {
+                    Html += '<span>'+this_Data.position+'</span>';
+                } else {
+                    Html += '<span>暂无</span>';
+                }
                 Html += '<input type="text" class="updateRemark" data-phone="'+this_Data.phone+'" data-id="'+this_Data.id+'" value="'+this_Data.remark+'">';
                 Html += '</li>';
             }
@@ -233,8 +240,9 @@ $(function () {
                 }
                 result = $image.cropper(data.method, data.option);
                 if (data.method === 'getCroppedCanvas') {
+                    console.log(result)
                     var url = result.toDataURL('image/png',0.5);
-                    $("#base64").val(url);
+                    console.log(url)
                     signatureAdd(url)
                     // uploadbase64(url)
                 }
@@ -261,6 +269,8 @@ $(function () {
                 blobURL;
             var $image = $('.img-container > img')
             var files = this.files, file;
+            var name = files[0].name;
+            $("#file_Name").html(name)
             if (files && files.length) {
                 file = files[0];
                 if (/^image\/\w+$/.test(file.type)) {
@@ -280,8 +290,8 @@ $(function () {
         var fileDom = "#fileLocal";
         uploadEvt(Url,formDom,fileDom,function (data) {
             $("#img-corp").attr('src',data.data.urls[0]);
-            $("#base64Post").attr('data-header',data.sessionId);
-            corpEvt();
+            $("#formLocal").attr('data-header',data.sessionId);
+            corpUpImgEvt();
         })
     }
 //    添加签章
